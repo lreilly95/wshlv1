@@ -22,13 +22,13 @@ namespace wshlv1.API.Data
             _context.Remove(entity);
         }
 
-        public async Task<Team> GetTeam(int id)
+        public async Task<Team> GetTeam(int id) //Returns team with id.
         {
             var team = await _context.Teams.Include(p=>p.Players).FirstOrDefaultAsync(t => t.Id == id);
             return team;
         }
 
-        public async Task<IEnumerable<Team>> GetTeams()
+        public async Task<IEnumerable<Team>> GetTeams() //Returns all teams.
         {
             var teams = await _context.Teams.ToListAsync();
             return teams;

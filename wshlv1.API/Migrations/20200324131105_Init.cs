@@ -22,11 +22,42 @@ namespace wshlv1.API.Migrations
                     Wins = table.Column<int>(nullable: false),
                     Losses = table.Column<int>(nullable: false),
                     OTW = table.Column<int>(nullable: false),
-                    OTL = table.Column<int>(nullable: false)
+                    OTL = table.Column<int>(nullable: false),
+                    GoalsFor = table.Column<int>(nullable: false),
+                    GoalsAgainst = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Teams", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Games",
+                columns: table => new
+                {
+                    HomeTeamId = table.Column<int>(nullable: false),
+                    AwayTeamId = table.Column<int>(nullable: false),
+                    Id = table.Column<int>(nullable: false),
+                    Date = table.Column<DateTime>(nullable: false),
+                    HomeGoals = table.Column<int>(nullable: false),
+                    AwayGoals = table.Column<int>(nullable: false),
+                    VictorId = table.Column<int>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Games", x => new { x.HomeTeamId, x.AwayTeamId });
+                    table.ForeignKey(
+                        name: "FK_Games_Teams_AwayTeamId",
+                        column: x => x.AwayTeamId,
+                        principalTable: "Teams",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_Games_Teams_HomeTeamId",
+                        column: x => x.HomeTeamId,
+                        principalTable: "Teams",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateTable(
@@ -92,6 +123,11 @@ namespace wshlv1.API.Migrations
                 });
 
             migrationBuilder.CreateIndex(
+                name: "IX_Games_AwayTeamId",
+                table: "Games",
+                column: "AwayTeamId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Goalies_TeamId",
                 table: "Goalies",
                 column: "TeamId");
@@ -104,6 +140,9 @@ namespace wshlv1.API.Migrations
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.DropTable(
+                name: "Games");
+
             migrationBuilder.DropTable(
                 name: "Goalies");
 

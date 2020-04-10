@@ -9,8 +9,8 @@ using wshlv1.API.Data;
 namespace wshlv1.API.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20200128162704_GamesVictor")]
-    partial class GamesVictor
+    [Migration("20200324131105_Init")]
+    partial class Init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -20,26 +20,23 @@ namespace wshlv1.API.Migrations
 
             modelBuilder.Entity("wshlv1.API.Models.Game", b =>
                 {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd();
-
-                    b.Property<int>("AwayGoals");
+                    b.Property<int>("HomeTeamId");
 
                     b.Property<int>("AwayTeamId");
+
+                    b.Property<int>("AwayGoals");
 
                     b.Property<DateTime>("Date");
 
                     b.Property<int>("HomeGoals");
 
-                    b.Property<int>("HomeTeamId");
+                    b.Property<int>("Id");
 
                     b.Property<int>("VictorId");
 
-                    b.HasKey("Id");
+                    b.HasKey("HomeTeamId", "AwayTeamId");
 
                     b.HasIndex("AwayTeamId");
-
-                    b.HasIndex("HomeTeamId");
 
                     b.ToTable("Games");
                 });
@@ -127,6 +124,10 @@ namespace wshlv1.API.Migrations
 
                     b.Property<int>("GamesPlayed");
 
+                    b.Property<int>("GoalsAgainst");
+
+                    b.Property<int>("GoalsFor");
+
                     b.Property<int>("Losses");
 
                     b.Property<string>("Name");
@@ -153,14 +154,14 @@ namespace wshlv1.API.Migrations
             modelBuilder.Entity("wshlv1.API.Models.Game", b =>
                 {
                     b.HasOne("wshlv1.API.Models.Team", "AwayTeam")
-                        .WithMany()
+                        .WithMany("AwayGames")
                         .HasForeignKey("AwayTeamId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .OnDelete(DeleteBehavior.Restrict);
 
                     b.HasOne("wshlv1.API.Models.Team", "HomeTeam")
-                        .WithMany()
+                        .WithMany("HomeGames")
                         .HasForeignKey("HomeTeamId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .OnDelete(DeleteBehavior.Restrict);
                 });
 
             modelBuilder.Entity("wshlv1.API.Models.Goalie", b =>

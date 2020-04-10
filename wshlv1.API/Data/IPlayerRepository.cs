@@ -10,6 +10,7 @@ namespace wshlv1.API.Data
         void Delete<T>(T entity) where T: class;
         Task<bool> SaveAll();
         Task<IEnumerable<Player>> GetPlayers();
+        Task<IEnumerable<Player>> GetPlayersTeam(int teamId);
         Task<Player> GetPlayer(int id);
     }
 }

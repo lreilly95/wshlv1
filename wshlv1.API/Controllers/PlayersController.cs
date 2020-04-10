@@ -18,7 +18,7 @@ namespace wshlv1.API.Controllers
             _mapper = mapper;
             _repo = repo;
         }
-        
+        //GET /players  eg
         [HttpGet]
         public async Task<IActionResult> GetPlayers()
         {
@@ -26,7 +26,7 @@ namespace wshlv1.API.Controllers
             var playersToReturn = _mapper.Map<IEnumerable<PlayerForListDto>>(players);
             return Ok(playersToReturn);
         }
-
+        //GET /players/id  eg
         [HttpGet("{id}")]
         public async Task<IActionResult> GetPlayer(int id)
         {
@@ -34,6 +34,13 @@ namespace wshlv1.API.Controllers
             var playerToReturn = _mapper.Map<PlayerForDetailedDto>(player);
             return Ok(playerToReturn);
         }
-
+        //GET /players/team5/  eg
+        [HttpGet("team{teamId}")]
+        public async Task<IActionResult> GetPlayersTeam(int teamId)
+        {
+            var players = await _repo.GetPlayersTeam(teamId);
+            var playersToReturn = _mapper.Map<IEnumerable<PlayerForListDto>>(players);
+            return Ok(playersToReturn);
+        }
     }
 }

@@ -18,26 +18,23 @@ namespace wshlv1.API.Migrations
 
             modelBuilder.Entity("wshlv1.API.Models.Game", b =>
                 {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd();
-
-                    b.Property<int>("AwayGoals");
+                    b.Property<int>("HomeTeamId");
 
                     b.Property<int>("AwayTeamId");
+
+                    b.Property<int>("AwayGoals");
 
                     b.Property<DateTime>("Date");
 
                     b.Property<int>("HomeGoals");
 
-                    b.Property<int>("HomeTeamId");
+                    b.Property<int>("Id");
 
                     b.Property<int>("VictorId");
 
-                    b.HasKey("Id");
+                    b.HasKey("HomeTeamId", "AwayTeamId");
 
                     b.HasIndex("AwayTeamId");
-
-                    b.HasIndex("HomeTeamId");
 
                     b.ToTable("Games");
                 });
@@ -155,14 +152,14 @@ namespace wshlv1.API.Migrations
             modelBuilder.Entity("wshlv1.API.Models.Game", b =>
                 {
                     b.HasOne("wshlv1.API.Models.Team", "AwayTeam")
-                        .WithMany()
+                        .WithMany("AwayGames")
                         .HasForeignKey("AwayTeamId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .OnDelete(DeleteBehavior.Restrict);
 
                     b.HasOne("wshlv1.API.Models.Team", "HomeTeam")
-                        .WithMany()
+                        .WithMany("HomeGames")
                         .HasForeignKey("HomeTeamId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .OnDelete(DeleteBehavior.Restrict);
                 });
 
             modelBuilder.Entity("wshlv1.API.Models.Goalie", b =>

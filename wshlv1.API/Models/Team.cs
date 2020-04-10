@@ -19,5 +19,7 @@ namespace wshlv1.API.Models
         public int GoalsAgainst { get; set; }
         public ICollection<Player> Players { get; set; }
         public ICollection<Goalie> Goalies { get; set; }
+        public ICollection<Game> HomeGames { get; set;}
+        public ICollection<Game> AwayGames { get; set;}
     }
 }
