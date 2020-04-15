@@ -12,6 +12,7 @@ namespace wshlv1.API.Data
         public DbSet<Team> Teams { get; set; }
         public DbSet<Goalie> Goalies { get; set; }
         public DbSet<Game> Games { get; set; }
+        public DbSet<Official> Officials { get; set; }
 
         //Override to create the many-many relationship between teams & games,
         //not supported natively for SQLite in Entity Framework.

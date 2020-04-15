@@ -12,6 +12,5 @@ namespace wshlv1.API.Models
         public Team AwayTeam { get; set; }
         public int HomeGoals { get; set; }
         public int AwayGoals { get; set; }
-        public int VictorId { get; set;}
     }
 }

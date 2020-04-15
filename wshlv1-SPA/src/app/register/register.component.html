@@ -1,0 +1,15 @@
+<form  #registerForm="ngForm" class="text-center border border-light p-5 col-6 mx-auto" (ngSubmit)="register()">
+
+    <p class="h4 mb-4">Add New Official</p>
+
+    <!-- Username -->
+    <input type="email" class="form-control mb-4" name="username" placeholder="Username" required [(ngModel)]="model.username">
+
+    <!-- Password -->
+    <input type="password" class="form-control mb-4" name="password" placeholder="Password" required [(ngModel)]="model.password">
+
+    <!-- Sign in button -->
+    <button [disabled]="!registerForm.valid" mdbBtn color="info" block="true" class="my-4" type="submit">Register</button>
+    <button mdbBtn color="warning" block="true" class="my-4" type="submit" (click)="cancel()">Cancel</button>
+
+  </form> 

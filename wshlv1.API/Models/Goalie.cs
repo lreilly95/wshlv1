@@ -11,11 +11,9 @@ namespace wshlv1.API.Models
         public string LastName { get; set; }
         public int Number { get; set; }
         public DateTime DateOfBirth { get; set; }
-        public string Bio { get; set; }
         public int GamesPlayed { get; set; }
         public int GamesWon { get; set; }
         public double SavePercentage { get; set; }
         public double GAA { get; set; }
-        public string PhotoUrl { get; set; }
     }
 }

@@ -8,11 +8,9 @@ namespace wshlv1.API.Helpers
     {
         public AutoMapperProfiles()
         {
-            CreateMap<Player, PlayerForListDto>()
-            .ForMember(dest => dest.TeamName, opt => opt.MapFrom(src => src.Team.Name));
+            CreateMap<Player, PlayerForListDto>();
             CreateMap<Player, PlayerForDetailedDto>()
-            .ForMember(dest => dest.Age, opt => opt.MapFrom(src => src.DateOfBirth.CalculateAge()))
-            .ForMember(dest => dest.TeamName, opt => opt.MapFrom(src => src.Team.Name));
+            .ForMember(dest => dest.Age, opt => opt.MapFrom(src => src.DateOfBirth.CalculateAge()));
             CreateMap<Team, TeamForListDto>();
             CreateMap<Team, TeamForDetailedDto>();
             CreateMap<Goalie, GoalieForListDto>();

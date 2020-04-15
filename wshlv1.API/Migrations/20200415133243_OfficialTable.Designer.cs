@@ -9,8 +9,8 @@ using wshlv1.API.Data;
 namespace wshlv1.API.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20200324131105_Init")]
-    partial class Init
+    [Migration("20200415133243_OfficialTable")]
+    partial class OfficialTable
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -32,8 +32,6 @@ namespace wshlv1.API.Migrations
 
                     b.Property<int>("Id");
 
-                    b.Property<int>("VictorId");
-
                     b.HasKey("HomeTeamId", "AwayTeamId");
 
                     b.HasIndex("AwayTeamId");
@@ -45,8 +43,6 @@ namespace wshlv1.API.Migrations
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
-
-                    b.Property<string>("Bio");
 
                     b.Property<DateTime>("DateOfBirth");
 
@@ -62,8 +58,6 @@ namespace wshlv1.API.Migrations
 
                     b.Property<int>("Number");
 
-                    b.Property<string>("PhotoUrl");
-
                     b.Property<double>("SavePercentage");
 
                     b.Property<int>("TeamId");
@@ -75,14 +69,28 @@ namespace wshlv1.API.Migrations
                     b.ToTable("Goalies");
                 });
 
+            modelBuilder.Entity("wshlv1.API.Models.Official", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<byte[]>("PasswordHash");
+
+                    b.Property<byte[]>("PasswordSalt");
+
+                    b.Property<string>("Username");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Officials");
+                });
+
             modelBuilder.Entity("wshlv1.API.Models.Player", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
                     b.Property<int>("Assists");
-
-                    b.Property<string>("Bio");
 
                     b.Property<DateTime>("DateOfBirth");
 
@@ -97,8 +105,6 @@ namespace wshlv1.API.Migrations
                     b.Property<int>("Number");
 
                     b.Property<int>("PIMs");
-
-                    b.Property<string>("PhotoUrl");
 
                     b.Property<int>("PlusMinus");
 
@@ -136,13 +142,7 @@ namespace wshlv1.API.Migrations
 
                     b.Property<int>("OTW");
 
-                    b.Property<byte[]>("PasswordHash");
-
-                    b.Property<byte[]>("PasswordSalt");
-
                     b.Property<int>("Points");
-
-                    b.Property<string>("Username");
 
                     b.Property<int>("Wins");
 

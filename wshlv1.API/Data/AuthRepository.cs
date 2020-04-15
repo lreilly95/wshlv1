@@ -12,17 +12,17 @@ namespace wshlv1.API.Data
         {
             _context = context;
         }
-        public async Task<Team> Login(string username, string password)
+        public async Task<Official> Login(string username, string password)
         {
-            var team = await _context.Teams.FirstOrDefaultAsync(x => x.Username == username);
+            var official = await _context.Officials.FirstOrDefaultAsync(x => x.Username == username);
 
-            if(team == null) //If no user exists with given username
+            if(official == null) //If no user exists with given username
                 return null;
 
-            if(!VerifyPasswordHash(password, team.PasswordHash, team.PasswordSalt)) //If password verification fails
+            if(!VerifyPasswordHash(password, official.PasswordHash, official.PasswordSalt)) //If password verification fails
                 return null;
 
-            return team;
+            return official;
         }
 
         private bool VerifyPasswordHash(string password, byte[] passwordHash, byte[] passwordSalt)
@@ -38,18 +38,18 @@ namespace wshlv1.API.Data
             return true;
         }
 
-        public async Task<Team> Register(Team team, string password)
+        public async Task<Official> Register(Official official, string password)
         {
             byte[] passwordHash, passwordSalt;
             CreatePasswordHash(password, out passwordHash, out passwordSalt); 
 
-            team.PasswordHash = passwordHash;
-            team.PasswordSalt = passwordSalt;
+            official.PasswordHash = passwordHash;
+            official.PasswordSalt = passwordSalt;
 
-            await _context.Teams.AddAsync(team);
+            await _context.Officials.AddAsync(official);
             await _context.SaveChangesAsync();
 
-            return team;
+            return official;
         }
 
         private void CreatePasswordHash(string password, out byte[] passwordHash, out byte[] passwordSalt)
@@ -61,9 +61,9 @@ namespace wshlv1.API.Data
             }
         }
 
-        public async Task<bool> TeamExists(string username) //Returns true if team exists with name.
+        public async Task<bool> OfficialExists(string username) //Returns true if team exists with name.
         {
-            if (await _context.Teams.AnyAsync(x=>x.Username == username))
+            if (await _context.Officials.AnyAsync(x=>x.Username == username))
                 return true;
 
             return false;

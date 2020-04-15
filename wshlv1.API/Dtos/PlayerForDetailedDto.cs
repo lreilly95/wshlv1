@@ -10,7 +10,6 @@ namespace wshlv1.API.Dtos
         public string LastName { get; set; }
         public int Number { get; set; }
         public string Age { get; set; }
-        public string  TeamName { get; set; }
         public string Bio { get; set; }
         public int GamesPlayed { get; set; }
         public int Points { get; set; }

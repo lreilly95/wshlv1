@@ -1,0 +1,18 @@
+<div *ngIf="loggedIn()" class="text-center"><h2>Welcome {{authService.decodedToken?.unique_name | titlecase}}</h2></div>
+
+<div *ngIf="!loggedIn()">
+  <form  #loginForm="ngForm" class="text-center border border-light p-5 col-6 mx-auto" (ngSubmit)="login()">
+
+    <p class="h4 mb-4">Sign in</p>
+
+    <!-- Username -->
+    <input type="email" class="form-control mb-4" name="username" placeholder="Username" required [(ngModel)]="model.username">
+
+    <!-- Password -->
+    <input type="password" class="form-control mb-4" name="password" placeholder="Password" required [(ngModel)]="model.password">
+
+    <!-- Sign in button -->
+    <button [disabled]="!loginForm.valid" mdbBtn color="info" block="true" class="my-4" type="submit">Sign in</button>
+
+  </form>
+</div>

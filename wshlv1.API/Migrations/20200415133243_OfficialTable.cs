@@ -3,19 +3,31 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace wshlv1.API.Migrations
 {
-    public partial class Init : Migration
+    public partial class OfficialTable : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "Teams",
+                name: "Officials",
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
                     Username = table.Column<string>(nullable: true),
                     PasswordHash = table.Column<byte[]>(nullable: true),
-                    PasswordSalt = table.Column<byte[]>(nullable: true),
+                    PasswordSalt = table.Column<byte[]>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Officials", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Teams",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
                     Name = table.Column<string>(nullable: true),
                     GamesPlayed = table.Column<int>(nullable: false),
                     Points = table.Column<int>(nullable: false),
@@ -40,8 +52,7 @@ namespace wshlv1.API.Migrations
                     Id = table.Column<int>(nullable: false),
                     Date = table.Column<DateTime>(nullable: false),
                     HomeGoals = table.Column<int>(nullable: false),
-                    AwayGoals = table.Column<int>(nullable: false),
-                    VictorId = table.Column<int>(nullable: false)
+                    AwayGoals = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -71,12 +82,10 @@ namespace wshlv1.API.Migrations
                     LastName = table.Column<string>(nullable: true),
                     Number = table.Column<int>(nullable: false),
                     DateOfBirth = table.Column<DateTime>(nullable: false),
-                    Bio = table.Column<string>(nullable: true),
                     GamesPlayed = table.Column<int>(nullable: false),
                     GamesWon = table.Column<int>(nullable: false),
                     SavePercentage = table.Column<double>(nullable: false),
-                    GAA = table.Column<double>(nullable: false),
-                    PhotoUrl = table.Column<string>(nullable: true)
+                    GAA = table.Column<double>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -100,7 +109,6 @@ namespace wshlv1.API.Migrations
                     LastName = table.Column<string>(nullable: true),
                     Number = table.Column<int>(nullable: false),
                     DateOfBirth = table.Column<DateTime>(nullable: false),
-                    Bio = table.Column<string>(nullable: true),
                     GamesPlayed = table.Column<int>(nullable: false),
                     Points = table.Column<int>(nullable: false),
                     Goals = table.Column<int>(nullable: false),
@@ -108,7 +116,6 @@ namespace wshlv1.API.Migrations
                     PIMs = table.Column<int>(nullable: false),
                     PlusMinus = table.Column<int>(nullable: false),
                     SOG = table.Column<int>(nullable: false),
-                    PhotoUrl = table.Column<string>(nullable: true),
                     TeamId = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
@@ -145,6 +152,9 @@ namespace wshlv1.API.Migrations
 
             migrationBuilder.DropTable(
                 name: "Goalies");
+
+            migrationBuilder.DropTable(
+                name: "Officials");
 
             migrationBuilder.DropTable(
                 name: "Players");
