@@ -1,19 +1,48 @@
 <div class="container">
-  <table mdbTable>
+  <h3 class="mt-5">Skaters</h3>
+  <table mdbTable mdbTableScroll scrollY="true" maxHeight="700" bordered="true">
     <thead>
       <tr>
-        <th *ngFor="let head of headElements" scope="col">{{head}} </th>
+        <th *ngFor="let head of headElements; let i = index" scope="col" [mdbTableSort]="elements" [sortBy]="sortElements[i]">{{head}}
+        </th>
       </tr>
     </thead>
     <tbody>
-      <tr mdbTableCol *ngFor="let el of elements">
-        <td>{{el.number}}</td>
+      <tr mdbTableCol *ngFor="let el of elements; let i = index">
+        <td>{{el.number}}</td>   
         <td>{{el.firstName}}</td>
-        <td>{{el.lastName}}</td>     
+        <td>{{el.lastName}}</td>
+        <td>{{this.teamMap.get(el.teamId)}}</td>  
         <td>{{el.position}}</td>
+        <td>{{el.gamesPlayed}}</td>
         <td>{{el.points}}</td>
         <td>{{el.goals}}</td>
         <td>{{el.assists}}</td>
+        <td>{{el.piMs}}</td>
+        <td>{{el.plusMinus}}</td>
+        <td>{{el.sog}}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3 class="mt-5">Goalies</h3>
+  <table mdbTable mdbTableScroll scrollY="true" maxHeight="80vh" bordered="true">
+    <thead>
+      <tr>
+        <th *ngFor="let head of headGoalies; let i = index" scope="col" [mdbTableSort]="goalies" [sortBy]="sortGoalies[i]">{{head}}
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr mdbTableCol *ngFor="let el of goalies; let i = index">
+        <td>{{el.number}}</td>   
+        <td>{{el.firstName}}</td>
+        <td>{{el.lastName}}</td>
+        <td>{{this.teamMap.get(el.teamId)}}</td>  
+        <td>{{el.savePercentage+'%'}}</td>
+        <td>{{el.gamesPlayed}}</td>
+        <td>{{el.gamesWon}}</td>
+        <td>{{el.gaa}}</td>
       </tr>
     </tbody>
   </table>

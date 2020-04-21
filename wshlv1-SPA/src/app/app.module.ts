@@ -11,6 +11,11 @@ import { LoginFormComponent } from './loginForm/loginForm.component';
 import { AuthService } from './_services/auth.service';
 import { HomeComponent } from './home/home.component';
 import { RegisterComponent } from './register/register.component';
+import { TeamsComponent } from './teams/teams.component';
+import { GamesComponent } from './games/games.component';
+import { RouterModule } from '@angular/router';
+import { appRoutes } from './routes';
+import { StandingsComponent } from './standings/standings.component';
 
 @NgModule({
    declarations: [
@@ -19,13 +24,17 @@ import { RegisterComponent } from './register/register.component';
       TabletestComponent,
       LoginFormComponent,
       HomeComponent,
-      RegisterComponent
+      RegisterComponent,
+      TeamsComponent,
+      GamesComponent,
+      StandingsComponent
    ],
    imports: [
       BrowserModule,
       MDBBootstrapModule.forRoot(),
       HttpClientModule,
-      FormsModule
+      FormsModule,
+      RouterModule.forRoot(appRoutes)
    ],
    providers: [
       AuthService

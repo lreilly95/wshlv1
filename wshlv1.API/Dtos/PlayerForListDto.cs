@@ -5,6 +5,7 @@ namespace wshlv1.API.Dtos
     public class PlayerForListDto
     {
         public int Id { get; set; }
+        public int TeamId { get; set; }
         public char Position { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
@@ -16,5 +17,6 @@ namespace wshlv1.API.Dtos
         public int PIMs { get; set; }
         public int PlusMinus { get; set; }
         public int SOG { get; set; }
+        
     }
 }

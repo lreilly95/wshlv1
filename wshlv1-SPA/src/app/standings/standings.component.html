@@ -1,0 +1,21 @@
+<div class="container">
+  <h3 class="mt-5">Standings</h3>
+  <table mdbTable mdbTableScroll scrollY="true" maxHeight="700" bordered="true">
+    <thead>
+      <tr>
+        <th *ngFor="let head of headElements; let i = index" scope="col" [mdbTableSort]="elements" [sortBy]="sortElements[i]">{{head}}
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr mdbTableCol *ngFor="let el of elements; let i = index">
+        <td>{{el.name}}</td>   
+        <td>{{el.gamesPlayed}}</td>
+        <td>{{el.points}}</td>
+        <td>{{el.wins}}</td>  
+        <td>{{el.losses}}</td>
+        <td>{{el.otw}}</td>
+        <td>{{el.otl}}</td>
+      </tr>
+    </tbody>
+  </table>

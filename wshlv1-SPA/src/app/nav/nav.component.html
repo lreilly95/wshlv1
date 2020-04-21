@@ -2,24 +2,24 @@
 <mdb-navbar SideClass="navbar navbar-expand-lg navbar-dark bg-primary" [containerInside]="false">
 
   <!-- Navbar brand -->
-  <mdb-navbar-brand><a class="navbar-brand" href="#">WSHL</a></mdb-navbar-brand>
+  <mdb-navbar-brand><a class="navbar-brand" [routerLink]="['/home']" routerLinkActive="router-link-active" >WSHL</a></mdb-navbar-brand>
 
   <!-- Collapsible content -->
   <links>
 
     <!-- Links -->
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link waves-light" mdbWavesEffect>Home</a>
+      <li class="nav-item" routerLinkActive="active">
+        <a class="nav-link waves-light" mdbWavesEffect [routerLink]="['/home']" >Home</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link waves-light" mdbWavesEffect>Players</a>
+      <li class="nav-item" routerLinkActive="active">
+        <a class="nav-link waves-light" mdbWavesEffect [routerLink]="['/players']">Players</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link waves-light" mdbWavesEffect>Teams</a>
+      <li class="nav-item" routerLinkActive="active">
+        <a class="nav-link waves-light" mdbWavesEffect [routerLink]="['/teams']" >Teams</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link waves-light" mdbWavesEffect>Games</a>
+      <li class="nav-item" routerLinkActive="active">
+        <a class="nav-link waves-light" mdbWavesEffect [routerLink]="['/games']">Games</a>
       </li>
     </ul>
 
@@ -27,8 +27,8 @@
       <li *ngIf="loggedIn()" class="nav-item">
         <a class="nav-link waves-light" (click)="logout()"><i class="fa fa-sign-out"></i>Logout</a>
       </li>
-      <li *ngIf="!loggedIn()" class="nav-item">
-        <a class="nav-link waves-light">Officials</a>
+      <li *ngIf="!loggedIn()" class="nav-item" routerLinkActive="active">
+        <a class="nav-link waves-light" [routerLink]="['/login']" >Officials</a>
       </li>
     </ul>
 
