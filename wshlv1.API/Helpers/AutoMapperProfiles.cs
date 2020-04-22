@@ -17,6 +17,7 @@ namespace wshlv1.API.Helpers
             CreateMap<Goalie, GoalieForDetailedDto>()
             .ForMember(dest => dest.Age, opt => opt.MapFrom(src => src.DateOfBirth.CalculateAge()));
             CreateMap<Game, GameForListDto>();
+            CreateMap<PlayerForUpdateDto, Player>();
 
         }
     }

@@ -5,6 +5,10 @@ import { TeamsComponent } from './teams/teams.component';
 import { LoginFormComponent } from './loginForm/loginForm.component';
 import { RegisterComponent } from './register/register.component';
 import { GamesComponent } from './games/games.component';
+import { AdminComponent } from './admin/admin.component';
+import { PlayersEditComponent } from './players-edit/players-edit.component';
+import { AuthGuard } from './_guards/auth.guard';
+import { PlayersEditResolver } from './_resolvers/players-edit.resolver';
 
 export const appRoutes: Routes = [
     { path: 'home', component: HomeComponent},
@@ -13,5 +17,7 @@ export const appRoutes: Routes = [
     { path: 'login', component: LoginFormComponent},
     { path: 'register', component: RegisterComponent},
     { path: 'games', component: GamesComponent},
+    { path: 'admin', component: AdminComponent, canActivate: [AuthGuard]},
+    { path: 'players/:id', component: PlayersEditComponent, resolve: {player: PlayersEditResolver}, canActivate: [AuthGuard]},
     { path: '**', redirectTo: 'home', pathMatch: 'full'},
 ];

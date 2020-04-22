@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-standings',
@@ -11,7 +12,7 @@ export class StandingsComponent implements OnInit {
   // tslint:disable-next-line: max-line-length
   sortElements = ['name', 'gamesPlayed', 'points', 'wins', 'losses', 'otw', 'otl'];
   headElements = ['Team', 'Played', 'Points', 'Wins', 'Losses', 'OTW', 'OTL'];
-  baseUrl = 'http://localhost:5000/api/';
+  baseUrl = environment.apiUrl;
   teamMap = new Map();
 
   constructor(private http: HttpClient) { }

@@ -16,6 +16,14 @@ import { GamesComponent } from './games/games.component';
 import { RouterModule } from '@angular/router';
 import { appRoutes } from './routes';
 import { StandingsComponent } from './standings/standings.component';
+import { PlayersEditComponent } from './players-edit/players-edit.component';
+import { AdminComponent } from './admin/admin.component';
+import { JwtModule } from '@auth0/angular-jwt';
+import { PlayersEditResolver } from './_resolvers/players-edit.resolver';
+
+export function tokenGetter() {
+   return localStorage.getItem('token');
+}
 
 @NgModule({
    declarations: [
@@ -27,17 +35,27 @@ import { StandingsComponent } from './standings/standings.component';
       RegisterComponent,
       TeamsComponent,
       GamesComponent,
-      StandingsComponent
+      StandingsComponent,
+      PlayersEditComponent,
+      AdminComponent
    ],
    imports: [
       BrowserModule,
       MDBBootstrapModule.forRoot(),
       HttpClientModule,
       FormsModule,
-      RouterModule.forRoot(appRoutes)
+      RouterModule.forRoot(appRoutes),
+      JwtModule.forRoot({
+         config: {
+            tokenGetter: tokenGetter,
+            whitelistedDomains: ['localhost:5000'],
+            blacklistedRoutes: ['localhost:5000/api/auth']
+         }
+      })
    ],
    providers: [
-      AuthService
+      AuthService,
+      PlayersEditResolver
    ],
    bootstrap: [
       AppComponent

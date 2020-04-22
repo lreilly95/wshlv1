@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using AutoMapper;
@@ -31,7 +32,7 @@ namespace wshlv1.API.Controllers
         public async Task<IActionResult> GetPlayer(int id)
         {
             var player = await _repo.GetPlayer(id);
-            var playerToReturn = _mapper.Map<PlayerForDetailedDto>(player);
+            var playerToReturn = _mapper.Map<PlayerForListDto>(player);
             return Ok(playerToReturn);
         }
         //GET /players/team5/  eg
@@ -41,6 +42,18 @@ namespace wshlv1.API.Controllers
             var players = await _repo.GetPlayersTeam(teamId);
             var playersToReturn = _mapper.Map<IEnumerable<PlayerForListDto>>(players);
             return Ok(playersToReturn);
+        }
+        [HttpPut("{id}")]
+        public async Task<IActionResult> UpdatePlayer(int id, PlayerForUpdateDto playerForUpdateDto)
+        {
+            var playerFromRepo = await _repo.GetPlayer(id);
+
+            _mapper.Map(playerForUpdateDto, playerFromRepo);
+
+            if (await _repo.SaveAll())
+                return NoContent();
+
+            throw new Exception($"Updating player {id} failed on save.");
         }
     }
 }

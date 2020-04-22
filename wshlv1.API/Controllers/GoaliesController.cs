@@ -31,7 +31,7 @@ namespace wshlv1.API.Controllers
         public async Task<IActionResult> GetGoalie(int id)
         {
             var goalie = await _repo.GetGoalie(id);
-            var goalieToReturn = _mapper.Map<GoalieForDetailedDto>(goalie);
+            var goalieToReturn = _mapper.Map<GoalieForListDto>(goalie);
             return Ok(goalieToReturn);
         }
         //GEt /goalies/team5 eg

@@ -1,42 +1,56 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { environment } from 'src/environments/environment';
+import { Player } from '../_models/player';
+import { Goalie } from '../_models/goalie';
+import { PlayerService } from '../_services/player.service';
+import { GoalieService } from '../_services/goalie.service';
+import { AlertifyService } from '../_services/alertify.service';
 
 @Component({
 selector: 'app-tabletest',
 templateUrl: './tabletest.component.html',
 styleUrls: ['./tabletest.component.css'],
 })
+
 export class TabletestComponent implements OnInit {
-  elements: any;
-  goalies: any;
+  elements: Player[];
+  goalies: Goalie[];
   // tslint:disable-next-line: max-line-length
   sortElements = ['number', 'firstName', 'lastName', 'teamId', 'position', 'gamesPlayed', 'points', 'goals', 'assists', 'piMs', 'plusMinus', 'sog'];
   headElements = ['Number', 'Name', 'Surname', 'Team', 'Pos', 'Played', 'Points', 'Goals', 'Assists', 'PIMs', '+/-', 'SoG'];
   sortGoalies = ['number', 'firstName', 'lastName', 'teamId', 'savePercentage', 'gamesPlayed', 'gamesWon', 'gaa'];
   headGoalies = ['Number', 'Name', 'Surname' , 'Team', 'SV%', 'Played', 'Won', 'GAA'];
-  baseUrl = 'http://localhost:5000/api/';
+  baseUrl = environment.apiUrl;
   teamMap = new Map();
 
-  constructor(private http: HttpClient) { }
+  constructor(private playerService: PlayerService, private goalieService: GoalieService,
+              private http: HttpClient, private alertify: AlertifyService) { }
 
 
   ngOnInit() {
-    this.getValues();
+    this.loadPlayers();
+    this.loadGoalies();
+    this.mapTeams();
+  } 
+
+  loadPlayers() {
+    this.playerService.getPlayers().subscribe((players: Player[]) => {
+      this.elements = players;
+    }, error => {
+      this.alertify.error(error);
+    });
   }
 
-  getValues() {
-    this.http.get(this.baseUrl + 'players').subscribe(response => {
-      this.elements = response;
+  loadGoalies() {
+    this.goalieService.getGoalies().subscribe((goalies: Goalie[]) => {
+      this.goalies = goalies;
     }, error => {
-      console.log(error);
+      this.alertify.error(error);
     });
+  }
 
-    this.http.get(this.baseUrl + 'goalies').subscribe(response => {
-      this.goalies = response;
-    }, error => {
-      console.log(error);
-    });
-
+  mapTeams(){
     this.teamMap.set(1, 'Paisley Pioneers');
     this.teamMap.set(2, 'Glasgow Giants');
     this.teamMap.set(3, 'Ayr Assassins');
@@ -44,4 +58,5 @@ export class TabletestComponent implements OnInit {
     this.teamMap.set(5, 'Kilmarnock Kestrels');
     this.teamMap.set(6, 'Stirling Stingrays');
   }
-}
+  }
+

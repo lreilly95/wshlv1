@@ -27,6 +27,9 @@
       <li *ngIf="loggedIn()" class="nav-item">
         <a class="nav-link waves-light" (click)="logout()"><i class="fa fa-sign-out"></i>Logout</a>
       </li>
+      <li *ngIf="loggedIn()" class="nav-item" routerLinkActive="router-link-active">
+        <a class="nav-link waves-light" [routerLink]="['/admin']">Admin</a>
+      </li>
       <li *ngIf="!loggedIn()" class="nav-item" routerLinkActive="active">
         <a class="nav-link waves-light" [routerLink]="['/login']" >Officials</a>
       </li>
