@@ -31,7 +31,7 @@ namespace wshlv1.API.Controllers
         public async Task<IActionResult> GetTeam(int id)
         {
             var team = await _repo.GetTeam(id);
-            var teamToReturn = _mapper.Map<TeamForDetailedDto>(team);
+            var teamToReturn = _mapper.Map<TeamForListDto>(team);
             return Ok(teamToReturn);
         }
     }

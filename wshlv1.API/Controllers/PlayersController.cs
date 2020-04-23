@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using AutoMapper;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using wshlv1.API.Data;
 using wshlv1.API.Dtos;
@@ -43,6 +44,7 @@ namespace wshlv1.API.Controllers
             var playersToReturn = _mapper.Map<IEnumerable<PlayerForListDto>>(players);
             return Ok(playersToReturn);
         }
+        [Authorize]
         [HttpPut("{id}")]
         public async Task<IActionResult> UpdatePlayer(int id, PlayerForUpdateDto playerForUpdateDto)
         {
