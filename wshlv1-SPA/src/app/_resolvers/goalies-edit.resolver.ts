@@ -12,7 +12,7 @@ export class GoaliesEditResolver implements Resolve<Goalie> {
     constructor(private goalieService: GoalieService, private router: Router, private alertify: AlertifyService) {}
 
     resolve(route: ActivatedRouteSnapshot): Observable<Goalie> {
-        return this.goalieService.getGoalie(route.params['id']).pipe(
+        return this.goalieService.getGoalie(route.params.id).pipe(
             catchError(error => {
                 this.alertify.error('Problem retrieving Goalie data.');
                 this.router.navigate(['/goalies']);

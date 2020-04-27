@@ -21,7 +21,7 @@ export class PlayersEditComponent implements OnInit {
 
   ngOnInit() {
     this.route.data.subscribe(data => {
-      this.player = data['player'];
+      this.player = data.player;
     });
   }
 

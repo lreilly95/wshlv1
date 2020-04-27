@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
+import { Observable } from 'rxjs';
+import { Team } from '../_models/team';
+import { TeamService } from '../_services/team.service';
+import { AlertifyService } from '../_services/alertify.service';
 
 @Component({
   selector: 'app-standings',
@@ -8,24 +12,24 @@ import { environment } from 'src/environments/environment';
   styleUrls: ['./standings.component.css']
 })
 export class StandingsComponent implements OnInit {
-  elements: any;
+  elements: Team[];
   sortElements = ['name', 'gamesPlayed', 'points', 'wins', 'losses', 'otw', 'otl'];
   headElements = ['Team', 'Played', 'Points', 'Wins', 'Losses', 'OTW', 'OTL'];
   baseUrl = environment.apiUrl;
   teamMap = new Map();
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private teamService: TeamService, private alertify: AlertifyService) { }
 
 
   ngOnInit() {
-    this.getValues();
+    this.loadTeams();
   }
 
-  getValues() {
-    this.http.get(this.baseUrl + 'teams').subscribe(response => {
-      this.elements = response;
+  loadTeams() {
+    this.teamService.getTeams().subscribe((teams: Team[]) => {
+      this.elements = teams.sort((a, b) => b.points - a.points);
     }, error => {
-      console.log(error);
+      this.alertify.error(error);
     });
   }
 }

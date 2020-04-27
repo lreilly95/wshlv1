@@ -17,8 +17,8 @@ styleUrls: ['./tabletest.component.css'],
 export class TabletestComponent implements OnInit {
   elements: Player[];
   goalies: Goalie[];
-  // tslint:disable-next-line: max-line-length
-  sortElements = ['number', 'firstName', 'lastName', 'teamId', 'position', 'gamesPlayed', 'points', 'goals', 'assists', 'piMs', 'plusMinus', 'sog'];
+  sortElements = ['number', 'firstName', 'lastName', 'teamId',
+  'position', 'gamesPlayed', 'points', 'goals', 'assists', 'piMs', 'plusMinus', 'sog'];
   headElements = ['Number', 'Name', 'Surname', 'Team', 'Pos', 'Played', 'Points', 'Goals', 'Assists', 'PIMs', '+/-', 'SoG'];
   sortGoalies = ['number', 'firstName', 'lastName', 'teamId', 'savePercentage', 'gamesPlayed', 'gamesWon', 'gaa'];
   headGoalies = ['Number', 'Name', 'Surname' , 'Team', 'SV%', 'Played', 'Won', 'GAA'];
@@ -37,7 +37,7 @@ export class TabletestComponent implements OnInit {
 
   loadPlayers() {
     this.playerService.getPlayers().subscribe((players: Player[]) => {
-      this.elements = players;
+      this.elements = players.sort((a, b) => b.points - a.points);
     }, error => {
       this.alertify.error(error);
     });
@@ -45,13 +45,13 @@ export class TabletestComponent implements OnInit {
 
   loadGoalies() {
     this.goalieService.getGoalies().subscribe((goalies: Goalie[]) => {
-      this.goalies = goalies;
+      this.goalies = goalies.sort((a, b) => b.savePercentage - a.savePercentage);
     }, error => {
       this.alertify.error(error);
     });
   }
 
-  mapTeams(){
+  mapTeams() {
     this.teamMap.set(1, 'Paisley Pioneers');
     this.teamMap.set(2, 'Glasgow Giants');
     this.teamMap.set(3, 'Ayr Assassins');

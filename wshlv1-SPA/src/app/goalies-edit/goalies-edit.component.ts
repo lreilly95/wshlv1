@@ -21,7 +21,7 @@ export class GoaliesEditComponent implements OnInit {
 
   ngOnInit() {
     this.route.data.subscribe(data => {
-      this.goalie = data['goalie'];
+      this.goalie = data.goalie;
     });
   }
 

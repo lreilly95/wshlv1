@@ -20,6 +20,10 @@ getGame(id): Observable<Game> {
   return this.http.get<Game>(this.baseUrl + 'games/' + id);
 }
 
+getGamesTeam(teamId): Observable<Game[]> {
+  return this.http.get<Game[]>(this.baseUrl + 'games/team' +teamId);
+}
+
 updateGame(id: number, game: Game) {
   this.http.put(this.baseUrl + 'games/' + id, game);
 }

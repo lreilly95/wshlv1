@@ -34,19 +34,11 @@ namespace wshlv1.API.Controllers
             var gameToReturn = _mapper.Map<GameForListDto>(game);
             return Ok(gameToReturn);
         }
-        // eg /games/home4 Returns all games with home team with id
-        [HttpGet("home{id}")]
-        public async Task<IActionResult> GetHomeGames(int id)
+        // eg /games/team4 Returns all games with team with id
+        [HttpGet("team{id}")]
+        public async Task<IActionResult> GetTeamGames(int id)
         {
-            var games = await _repo.GetHomeGames(id);
-            var gamesToReturn = _mapper.Map<IEnumerable<GameForListDto>>(games);
-            return Ok(gamesToReturn);
-        }
-        // eg /games/away3 Returns all games with away team with id
-        [HttpGet("away{id}")] 
-        public async Task<IActionResult> GetAwayGames(int id)
-        {
-            var games = await _repo.GetAwayGames(id);
+            var games = await _repo.GetTeamGames(id);
             var gamesToReturn = _mapper.Map<IEnumerable<GameForListDto>>(games);
             return Ok(gamesToReturn);
         }

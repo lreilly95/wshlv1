@@ -1,3 +1,190 @@
-<p>
-  teams works!
-</p>
+<div class="text-center">
+  <button
+    mdbBtn
+    type="button"
+    color="secondary"
+    rounded="true"
+    [(ngModel)]="selectedTeamId"
+    mdbRadio="1"
+    mdbWavesEffect
+    (click)="updateComponent()"
+  >
+    Paisley Pioneers
+  </button>
+  <button
+    mdbBtn
+    type="button"
+    color="secondary"
+    rounded="true"
+    [(ngModel)]="selectedTeamId"
+    mdbRadio="2"
+    mdbWavesEffect
+    (click)="updateComponent()"
+  >
+    Glasgow Giants
+  </button>
+  <button
+    mdbBtn
+    type="button"
+    color="secondary"
+    rounded="true"
+    [(ngModel)]="selectedTeamId"
+    mdbRadio="3"
+    mdbWavesEffect
+    (click)="updateComponent()"
+  >
+    Ayr Assassins
+  </button>
+  <button
+    mdbBtn
+    type="button"
+    color="secondary"
+    rounded="true"
+    [(ngModel)]="selectedTeamId"
+    mdbRadio="4"
+    mdbWavesEffect
+    (click)="updateComponent()"
+  >
+    Dumfries Destroyers
+  </button>
+  <button
+    mdbBtn
+    type="button"
+    color="secondary"
+    rounded="true"
+    [(ngModel)]="selectedTeamId"
+    mdbRadio="5"
+    mdbWavesEffect
+    (click)="updateComponent()"
+  >
+    Kilmarnock Kestrels
+  </button>
+  <button
+    mdbBtn
+    type="button"
+    color="secondary"
+    rounded="true"
+    [(ngModel)]="selectedTeamId"
+    mdbRadio="6"
+    mdbWavesEffect
+    (click)="updateComponent()"
+  >
+    Stirling Stingrays
+  </button>
+</div>
+
+<div *ngIf="selectedTeamId != null" class="container">
+  <h3 class="mt-5 text-center">Games</h3>
+  <div class="row">
+    <div class="col-md-4 col-sm-6" *ngFor="let el of games">
+      <mdb-card class="mt-4">
+        <mdb-card-body>
+          <mdb-card-title class="text-center">
+            <h4>{{ el.date | date: "dd/MM/yy" }}</h4>
+          </mdb-card-title>
+
+          <div class="row text-center">
+            <div class="col-4">
+              <mdb-card-title>{{
+                this.teamMap.get(el.homeTeamId)
+              }}</mdb-card-title>
+            </div>
+            <div class="col-4"></div>
+            <div class="col-4">
+              <mdb-card-title>{{
+                this.teamMap.get(el.awayTeamId)
+              }}</mdb-card-title>
+            </div>
+          </div>
+          <div class="row text-center mt-2">
+            <div class="col-4">
+              <h3>{{ el.homeGoals }}</h3>
+            </div>
+            <div class="col-4">
+              <h3>-</h3>
+            </div>
+            <div class="col-4">
+              <h3>{{ el.awayGoals }}</h3>
+            </div>
+          </div>
+        </mdb-card-body>
+      </mdb-card>
+    </div>
+  </div>
+
+  <h3 class="mt-5 text-center">Skaters</h3>
+  <table
+    mdbTable
+    mdbTableScroll
+    striped="true"
+    scrollY="true"
+    maxHeight="700"
+    bordered="true"
+  >
+    <thead>
+      <tr>
+        <th
+          *ngFor="let head of headElements; let i = index"
+          scope="col"
+          [mdbTableSort]="players"
+          [sortBy]="sortElements[i]"
+        >
+          {{ head }}
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr mdbTableCol *ngFor="let el of players; let i = index">
+        <td>{{ el.number }}</td>
+        <td>{{ el.firstName }}</td>
+        <td>{{ el.lastName }}</td>
+        <td>{{ el.position }}</td>
+        <td>{{ el.gamesPlayed }}</td>
+        <td>{{ el.points }}</td>
+        <td>{{ el.goals }}</td>
+        <td>{{ el.assists }}</td>
+        <td>{{ el.piMs }}</td>
+        <td>{{ el.plusMinus }}</td>
+        <td>{{ el.sog }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3 class="mt-5 text-center">Goalies</h3>
+  <table
+    mdbTable
+    mdbTableScroll
+    striped="true"
+    scrollY="true"
+    maxHeight="80vh"
+    bordered="true"
+  >
+    <thead>
+      <tr>
+        <th
+          *ngFor="let head of headGoalies; let i = index"
+          scope="col"
+          [mdbTableSort]="goalies"
+          [sortBy]="sortGoalies[i]"
+        >
+          {{ head }}
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr mdbTableCol *ngFor="let el of goalies; let i = index">
+        <td>{{ el.number }}</td>
+        <td>{{ el.firstName }}</td>
+        <td>{{ el.lastName }}</td>
+        <td>{{ el.savePercentage + "%" }}</td>
+        <td>{{ el.gamesPlayed }}</td>
+        <td>{{ el.gamesWon }}</td>
+        <td>{{ el.gaa }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div *ngIf="selectedTeamId == null" class="text-center mt-5">
+  <h1>Click on a team name to view their Games and Rosters</h1>
+</div>

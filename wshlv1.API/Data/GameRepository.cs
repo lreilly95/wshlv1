@@ -35,17 +35,12 @@ namespace wshlv1.API.Data
             return games;
         }
 
-        public async Task<IEnumerable<Game>> GetHomeGames(int id) //Returns games where home team matches id
+        public async Task<IEnumerable<Game>> GetTeamGames(int id) //Returns games where a team matches id
         {
-            var games = await _context.Games.Where(g => g.HomeTeamId == id).ToListAsync();
+            var games = await _context.Games.Where(g => g.HomeTeamId == id || g.AwayTeamId == id).ToListAsync();
             return games;
         }
 
-        public async Task<IEnumerable<Game>> GetAwayGames(int id) //Returns games where away team matches id
-        {
-            var games = await _context.Games.Where(g => g.AwayTeamId == id).ToListAsync();
-            return games;
-        }
 
         public async Task<bool> SaveAll()
         {

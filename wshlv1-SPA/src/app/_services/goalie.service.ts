@@ -20,6 +20,11 @@ getGoalie(id): Observable<Goalie> {
   return this.http.get<Goalie>(this.baseUrl + 'goalies/' + id);
 }
 
+getGoaliesTeam(teamId): Observable<Goalie[]> {
+  return this.http.get<Goalie[]>(this.baseUrl + 'goalies/team' + teamId);
+}
+
+
 // Send a http PUT request to API, body is goalie object
 updateGoalie(id: number, goalie: Goalie) {
   return this.http.put(this.baseUrl + 'goalies/' + id, goalie);

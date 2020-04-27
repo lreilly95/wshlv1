@@ -11,7 +11,6 @@ namespace wshlv1.API.Data
         Task<bool> SaveAll();
         Task<IEnumerable<Game>> GetGames();
         Task<Game> GetGame(int id);
-        Task<IEnumerable<Game>> GetHomeGames(int id);
-        Task<IEnumerable<Game>> GetAwayGames(int id);
+        Task<IEnumerable<Game>> GetTeamGames(int id);
     }
 }
