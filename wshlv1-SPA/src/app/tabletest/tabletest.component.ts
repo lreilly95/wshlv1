@@ -6,6 +6,7 @@ import { Goalie } from '../_models/goalie';
 import { PlayerService } from '../_services/player.service';
 import { GoalieService } from '../_services/goalie.service';
 import { AlertifyService } from '../_services/alertify.service';
+import { AuthService } from '../_services/auth.service';
 
 @Component({
 selector: 'app-tabletest',
@@ -25,7 +26,7 @@ export class TabletestComponent implements OnInit {
   teamMap = new Map();
 
   constructor(private playerService: PlayerService, private goalieService: GoalieService,
-              private http: HttpClient, private alertify: AlertifyService) { }
+              private http: HttpClient, private alertify: AlertifyService, private authService: AuthService) { }
 
 
   ngOnInit() {
@@ -57,6 +58,10 @@ export class TabletestComponent implements OnInit {
     this.teamMap.set(4, 'Dumfries Destroyers');
     this.teamMap.set(5, 'Kilmarnock Kestrels');
     this.teamMap.set(6, 'Stirling Stingrays');
+  }
+
+  loggedIn() {
+    return this.authService.loggedIn();
   }
   }
 

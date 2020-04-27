@@ -13,6 +13,7 @@ namespace wshlv1.API.Helpers
             CreateMap<Goalie, GoalieForListDto>();
             CreateMap<Game, GameForListDto>();
             CreateMap<PlayerForUpdateDto, Player>();
+            CreateMap<GoalieForUpdateDto, Goalie>();
 
         }
     }

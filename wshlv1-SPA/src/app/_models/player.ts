@@ -1,5 +1,3 @@
-import { NumberValueAccessor } from '@angular/forms';
-
 export interface Player {
     id: number;
     firstName: string;

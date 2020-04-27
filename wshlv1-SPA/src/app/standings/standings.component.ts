@@ -9,7 +9,6 @@ import { environment } from 'src/environments/environment';
 })
 export class StandingsComponent implements OnInit {
   elements: any;
-  // tslint:disable-next-line: max-line-length
   sortElements = ['name', 'gamesPlayed', 'points', 'wins', 'losses', 'otw', 'otl'];
   headElements = ['Team', 'Played', 'Points', 'Wins', 'Losses', 'OTW', 'OTL'];
   baseUrl = environment.apiUrl;

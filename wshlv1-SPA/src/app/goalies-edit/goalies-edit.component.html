@@ -1,0 +1,67 @@
+<form #editForm="ngForm" (ngSubmit)="updateGoalie()" class="text-center border border-light p-5">
+
+  <p class="h2 mb-4">Edit goalie</p>
+
+  <div class="row my-3">
+    <div class="col-lg-3 col-sm-12">
+      <h4>First Name</h4>
+    </div>
+    <div class="col-lg-3 col-sm-12">
+      <textarea name="firstName" rows="1" class="form-control" [(ngModel)]="goalie.firstName"></textarea>
+    </div>
+    <div class="col-lg-3 col-sm-12">
+      <h4>Last Name</h4>
+    </div>
+    <div class="col-lg-3 col-sm-12">
+      <textarea name="lastName" rows="1" class="form-control" [(ngModel)]="goalie.lastName"></textarea>
+    </div>
+  </div>
+
+  <div class="row my-3">
+    <div class="col-lg-3 col-sm-12">
+      <h4>Number</h4>
+    </div>
+    <div class="col-lg-3 col-sm-12">
+      <textarea name="number" rows="1" class="form-control" [(ngModel)]="goalie.number"></textarea>
+    </div>
+    <div class="col-lg-3 col-sm-12">
+      <h4>Team ID</h4>
+    </div>
+    <div class="col-lg-3 col-sm-12 col-sm-12">
+      <textarea name="teamId" rows="1" class="form-control" [(ngModel)]="goalie.teamId"></textarea>
+    </div>
+  </div>
+
+  <div class="row my-3">
+    <div class="col-lg-3 col-sm-12">
+      <h4>Save Percentage</h4>
+    </div>
+    <div class="col-lg-3 col-sm-12">
+      <textarea name="position" rows="1" class="form-control" [(ngModel)]="goalie.savePercentage"></textarea>
+    </div>
+    <div class="col-lg-3 col-sm-12">
+      <h4>Games Played</h4>
+    </div>
+    <div class="col-lg-3 col-sm-12">
+      <textarea name="gamesPlayed" rows="1" class="form-control" [(ngModel)]="goalie.gamesPlayed"></textarea>
+    </div>
+  </div>
+
+  <div class="row my-3">
+    <div class="col-lg-3 col-sm-12">
+      <h4>Games Won</h4>
+    </div>
+    <div class="col-lg-3 col-sm-12">
+      <textarea name="points" rows="1" class="form-control" [(ngModel)]="goalie.gamesWon"></textarea>
+    </div>
+    <div class="col-lg-3 col-sm-12">
+      <h4>Goals Against Average</h4>
+    </div>
+    <div class="col-lg-3 col-sm-12">
+      <textarea name="goals" rows="1" class="form-control" [(ngModel)]="goalie.gaa"></textarea>
+    </div>
+  </div>
+
+  <button [disabled]="!editForm.dirty" mdbBtn color="info" block="true" class="my-4" type="submit">Update</button>
+
+</form>

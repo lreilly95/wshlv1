@@ -1,6 +1,8 @@
+using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using AutoMapper;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using wshlv1.API.Data;
 using wshlv1.API.Dtos;
@@ -41,6 +43,20 @@ namespace wshlv1.API.Controllers
             var goalies = await _repo.GetGoaliesTeam(teamId);
             var goaliesToReturn = _mapper.Map<IEnumerable<GoalieForListDto>>(goalies);
             return Ok(goaliesToReturn);
+        }
+
+        [Authorize]
+        [HttpPut("{id}")]
+        public async Task<IActionResult> UpdateGoalie(int id, GoalieForUpdateDto goalieForUpdateDto)
+        {
+            var goalieFromRepo = await _repo.GetGoalie(id);
+
+            _mapper.Map(goalieForUpdateDto, goalieFromRepo);
+
+            if (await _repo.SaveAll())
+                return NoContent();
+
+            throw new Exception($"Updating goalie {id} failed on save.");
         }
     }
 }

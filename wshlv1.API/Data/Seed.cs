@@ -9,7 +9,7 @@ namespace wshlv1.API.Data
     {
         public static void SeedPlayers(DataContext context)
         {
-            if (!context.Players.Any()) //If players table is empty, seed table with playerr data.
+            if (!context.Players.Any()) //If players table is empty, seed table with player data.
             {
                 var playerData = System.IO.File.ReadAllText("Data/PlayerSeedData.json");
                 var players = JsonConvert.DeserializeObject<List<Player>>(playerData);

@@ -20,6 +20,7 @@ getPlayer(id): Observable<Player> {
   return this.http.get<Player>(this.baseUrl + 'players/' + id);
 }
 
+// Send http PUT request to API with player object
 updatePlayer(id: number, player: Player) {
   return this.http.put(this.baseUrl + 'players/' + id, player);
 }

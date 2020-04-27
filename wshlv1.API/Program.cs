@@ -21,6 +21,7 @@ namespace wshlv1.API
             using (var scope = host.Services.CreateScope())
             {
                 var services = scope.ServiceProvider;
+                // Will create databse if it does not exist, and will seed Player data if none exists
                 try
                 {
                     var context = services.GetRequiredService<DataContext>();

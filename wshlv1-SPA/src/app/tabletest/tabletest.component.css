@@ -2,6 +2,6 @@ th, td {
     text-align: center;
   }
 
-th {
+th, .editLink {
   cursor: pointer;
 }

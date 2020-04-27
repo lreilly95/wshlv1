@@ -25,6 +25,7 @@ export class PlayersEditComponent implements OnInit {
     });
   }
 
+  // Calls player service, send a http PUT request with player object
   updatePlayer() {
     this.playerService.updatePlayer(this.player.id, this.player).subscribe(next => {
       this.alertify.success('Player Updated');

@@ -1,3 +1,42 @@
-<p>
-  games works!
-</p>
+<div class="mx-5">
+  <div class="row">
+    <div class="col-md-4 col-sm-6"  *ngFor="let el of games">
+      <mdb-card class="mt-4">
+        <!--Card content-->
+        <mdb-card-body>
+
+          <!--Title-->
+          <mdb-card-title class="text-center">
+            <h4>{{el.date | date:"dd/MM/yy"}}</h4>
+          </mdb-card-title>
+
+          <!--Text-->
+          <div class="row text-center">
+            <div class="col-4">
+              <mdb-card-title>{{this.teamMap.get(el.homeTeamId)}}</mdb-card-title>
+            </div>
+            <div class="col-4">
+            </div>
+            <div class="col-4">
+              <mdb-card-title>{{this.teamMap.get(el.awayTeamId)}}</mdb-card-title>
+            </div>
+          </div>
+          <div class="row text-center mt-2">
+            <div class="col-4">
+              <h3>{{el.homeGoals}}</h3>
+            </div>
+            <div class="col-4">
+              <h3>-</h3>
+            </div>
+            <div class="col-4">
+              <h3>{{el.awayGoals}}</h3>
+            </div>
+          </div>
+          
+
+          <a href="#" mdbBtn color="primary" mdbWavesEffect>Button</a>
+        </mdb-card-body>
+      </mdb-card>
+    </div>
+  </div>
+</div>

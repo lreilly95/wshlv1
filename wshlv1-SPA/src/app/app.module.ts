@@ -20,6 +20,8 @@ import { PlayersEditComponent } from './players-edit/players-edit.component';
 import { AdminComponent } from './admin/admin.component';
 import { JwtModule } from '@auth0/angular-jwt';
 import { PlayersEditResolver } from './_resolvers/players-edit.resolver';
+import { GoaliesEditResolver } from './_resolvers/goalies-edit.resolver';
+import { GoaliesEditComponent } from './goalies-edit/goalies-edit.component';
 
 export function tokenGetter() {
    return localStorage.getItem('token');
@@ -37,6 +39,7 @@ export function tokenGetter() {
       GamesComponent,
       StandingsComponent,
       PlayersEditComponent,
+      GoaliesEditComponent,
       AdminComponent
    ],
    imports: [
@@ -55,7 +58,8 @@ export function tokenGetter() {
    ],
    providers: [
       AuthService,
-      PlayersEditResolver
+      PlayersEditResolver,
+      GoaliesEditResolver
    ],
    bootstrap: [
       AppComponent

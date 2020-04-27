@@ -9,6 +9,8 @@ import { AdminComponent } from './admin/admin.component';
 import { PlayersEditComponent } from './players-edit/players-edit.component';
 import { AuthGuard } from './_guards/auth.guard';
 import { PlayersEditResolver } from './_resolvers/players-edit.resolver';
+import { GoaliesEditComponent } from './goalies-edit/goalies-edit.component';
+import { GoaliesEditResolver } from './_resolvers/goalies-edit.resolver';
 
 export const appRoutes: Routes = [
     { path: 'home', component: HomeComponent},
@@ -19,5 +21,6 @@ export const appRoutes: Routes = [
     { path: 'games', component: GamesComponent},
     { path: 'admin', component: AdminComponent, canActivate: [AuthGuard]},
     { path: 'players/:id', component: PlayersEditComponent, resolve: {player: PlayersEditResolver}, canActivate: [AuthGuard]},
+    { path: 'goalies/:id', component: GoaliesEditComponent, resolve: {goalie: GoaliesEditResolver}, canActivate: [AuthGuard]},
     { path: '**', redirectTo: 'home', pathMatch: 'full'},
 ];

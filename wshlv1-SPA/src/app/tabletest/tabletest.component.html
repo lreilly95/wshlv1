@@ -1,5 +1,6 @@
 <div class="container">
   <h3 class="mt-5">Skaters</h3>
+  <h4 *ngIf="loggedIn()">Click on player number to edit player</h4>
   <table mdbTable mdbTableScroll scrollY="true" maxHeight="700" bordered="true">
     <thead>
       <tr>
@@ -9,7 +10,8 @@
     </thead>
     <tbody>
       <tr mdbTableCol *ngFor="let el of elements; let i = index">
-        <td [routerLink]="['/players/', el.id]">{{el.number}}</td>   
+        <td class="editLink" *ngIf="loggedIn()" [routerLink]="['/players/', el.id]">{{el.number}}</td>
+        <td *ngIf="!loggedIn()">{{el.number}}</td>      
         <td>{{el.firstName}}</td>
         <td>{{el.lastName}}</td>
         <td>{{this.teamMap.get(el.teamId)}}</td>  
@@ -35,7 +37,8 @@
     </thead>
     <tbody>
       <tr mdbTableCol *ngFor="let el of goalies; let i = index">
-        <td>{{el.number}}</td>   
+        <td class="editLink" *ngIf="loggedIn()" [routerLink]="['/goalies/', el.id]">{{el.number}}</td>
+        <td *ngIf="!loggedIn()">{{el.number}}</td>   
         <td>{{el.firstName}}</td>
         <td>{{el.lastName}}</td>
         <td>{{this.teamMap.get(el.teamId)}}</td>  
