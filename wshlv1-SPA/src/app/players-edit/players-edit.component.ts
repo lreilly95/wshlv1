@@ -6,6 +6,7 @@ import { AlertifyService } from '../_services/alertify.service';
 import { ActivatedRoute } from '@angular/router';
 import { PlayerService } from '../_services/player.service';
 import { NgForm } from '@angular/forms';
+//import { isNumeric } from 'rxjs/util/isNumeric';
 
 @Component({
   selector: 'app-players-edit',
@@ -15,6 +16,7 @@ import { NgForm } from '@angular/forms';
 export class PlayersEditComponent implements OnInit {
   @ViewChild('editForm', {static: true}) editForm: NgForm;
   player: Player;
+  errors: boolean = false;
   constructor(private playerService: PlayerService, private http: HttpClient,
               private alertify: AlertifyService, private route: ActivatedRoute) { }
 
@@ -32,6 +34,44 @@ export class PlayersEditComponent implements OnInit {
       this.editForm.reset(this.player);
     }, error => {
       this.alertify.error(error);
+      this.editForm.reset(this.player);
     });
+  }
+
+  // Client side validation of player data
+  validateInput() {
+    this.errors = false;
+    if (!isNumeric(this.player.number) || this.player.number < 1 || this.player.number > 98) {
+      this.alertify.error('Player number must be a number between 1 & 98');
+      this.errors = true;
+    }
+    if (!isNumeric(this.player.teamId) || this.player.teamId < 1 || this.player.teamId > 6) {
+      this.alertify.error('Player Team ID must be a number between 1 & 6');
+      this.errors = true;
+    }
+    if (!isNumeric(this.player.points) || !isNumeric(this.player.goals) || !isNumeric(this.player.assists)
+    || !isNumeric(this.player.gamesPlayed) || !isNumeric(this.player.piMs)
+    || !isNumeric(this.player.plusMinus) || !isNumeric(this.player.sog)) {
+      this.alertify.error('Player stats must be numeric');
+      this.errors = true;
+    }
+    if (isNumeric(this.player.firstName) || isNumeric(this.player.lastName) || isNumeric(this.player.position)) {
+      this.alertify.error('Names and positions cannot be numeric');
+      this.errors = true;
+    }
+    if (this.player.position !== 'F' && this.player.position != 'D') {
+      this.alertify.error('Position must be either "F" or "D"');
+      this.errors = true;
+    }
+    if (this.errors === false) {
+      this.updatePlayer();
+    } else {
+      this.editForm.reset(this.player);
+    }
+
+    // simplified implementation of isNumeric from rxjs, which is no longer available from v6
+    function isNumeric(val: any): boolean {
+      return !(val instanceof Array) && (val - parseFloat(val) + 1) >= 0;
+    }
   }
 }

@@ -49,7 +49,7 @@ export class TeamsComponent implements OnInit {
 
   loadGames(selectedTeamId) {
     this.gameService.getGamesTeam(selectedTeamId).subscribe((games: Game[]) => {
-      this.games = games;
+      this.games = games.sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime());
     }, error => {
       this.alertify.error(error);
     });

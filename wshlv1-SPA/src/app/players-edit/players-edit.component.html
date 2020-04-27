@@ -1,4 +1,4 @@
-<form #editForm="ngForm" (ngSubmit)="updatePlayer()" class="text-center border border-light p-5">
+<form #editForm="ngForm" (ngSubmit)="validateInput()" class="text-center border border-light p-5">
 
   <p class="h2 mb-4">Edit Player</p>
 
@@ -7,13 +7,13 @@
       <h4>First Name</h4>
     </div>
     <div class="col-3">
-      <textarea name="firstName" rows="1" class="form-control" [(ngModel)]="player.firstName"></textarea>
+      <input name="firstName" rows="1" class="form-control" [(ngModel)]="player.firstName">
     </div>
     <div class="col-3">
       <h4>Last Name</h4>
     </div>
     <div class="col-3">
-      <textarea name="lastName" rows="1" class="form-control" [(ngModel)]="player.lastName"></textarea>
+      <input name="lastName" rows="1" class="form-control" [(ngModel)]="player.lastName">
     </div>
   </div>
 
@@ -22,13 +22,13 @@
       <h4>Number</h4>
     </div>
     <div class="col-3">
-      <textarea name="number" rows="1" class="form-control" [(ngModel)]="player.number"></textarea>
+      <input name="number" type="number" rows="1" class="form-control" [(ngModel)]="player.number">
     </div>
     <div class="col-3">
       <h4>Team ID</h4>
     </div>
     <div class="col-3">
-      <textarea name="teamId" rows="1" class="form-control" [(ngModel)]="player.teamId"></textarea>
+      <input name="teamId" type="number" min="1" max="6" rows="1" class="form-control" [(ngModel)]="player.teamId">
     </div>
   </div>
 
@@ -37,13 +37,13 @@
       <h4>Position</h4>
     </div>
     <div class="col-3">
-      <textarea name="position" rows="1" class="form-control" [(ngModel)]="player.position"></textarea>
+      <input name="position" rows="1" class="form-control" [(ngModel)]="player.position">
     </div>
     <div class="col-3">
       <h4>Games Played</h4>
     </div>
     <div class="col-3">
-      <textarea name="gamesPlayed" rows="1" class="form-control" [(ngModel)]="player.gamesPlayed"></textarea>
+      <input name="gamesPlayed" type="number" rows="1" class="form-control" [(ngModel)]="player.gamesPlayed">
     </div>
   </div>
 
@@ -52,13 +52,13 @@
       <h4>Points</h4>
     </div>
     <div class="col-3">
-      <textarea name="points" rows="1" class="form-control" [(ngModel)]="player.points"></textarea>
+      <input name="points" type="number" rows="1" class="form-control" [(ngModel)]="player.points">
     </div>
     <div class="col-3">
       <h4>Goals</h4>
     </div>
     <div class="col-3">
-      <textarea name="goals" rows="1" class="form-control" [(ngModel)]="player.goals"></textarea>
+      <input name="goals" type="number" rows="1" class="form-control" [(ngModel)]="player.goals">
     </div>
   </div>
 
@@ -67,13 +67,13 @@
       <h4>Assists</h4>
     </div>
     <div class="col-3">
-      <textarea name="assists" rows="1" class="form-control" [(ngModel)]="player.assists"></textarea>
+      <input name="assists" type="number" rows="1" class="form-control" [(ngModel)]="player.assists">
     </div>
     <div class="col-3">
       <h4>PIMs</h4>
     </div>
     <div class="col-3">
-      <textarea name="piMs" rows="1" class="form-control" [(ngModel)]="player.piMs"></textarea>
+      <input name="piMs" type="number" rows="1" class="form-control" [(ngModel)]="player.piMs">
     </div>
   </div>
 
@@ -82,16 +82,17 @@
       <h4>Plus Minus</h4>
     </div>
     <div class="col-3">
-      <textarea name="plusMinus" rows="1" class="form-control" [(ngModel)]="player.plusMinus"></textarea>
+      <input name="plusMinus" type="number" rows="1" class="form-control" [(ngModel)]="player.plusMinus">
     </div>
     <div class="col-3">
       <h4>Shots on Goal</h4>
     </div>
     <div class="col-3">
-      <textarea name="sog" rows="1" class="form-control" [(ngModel)]="player.sog"></textarea>
+      <input name="sog" type="number" rows="1" class="form-control" [(ngModel)]="player.sog">
     </div>
   </div>
 
   <button [disabled]="!editForm.dirty" mdbBtn color="info" block="true" class="my-4" type="submit">Update</button>
 
 </form>
+
