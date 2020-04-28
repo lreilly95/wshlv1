@@ -22,6 +22,7 @@ import { JwtModule } from '@auth0/angular-jwt';
 import { PlayersEditResolver } from './_resolvers/players-edit.resolver';
 import { GoaliesEditResolver } from './_resolvers/goalies-edit.resolver';
 import { GoaliesEditComponent } from './goalies-edit/goalies-edit.component';
+import { FooterComponent } from './footer/footer.component';
 
 export function tokenGetter() {
    return localStorage.getItem('token');
@@ -40,7 +41,8 @@ export function tokenGetter() {
       StandingsComponent,
       PlayersEditComponent,
       GoaliesEditComponent,
-      AdminComponent
+      AdminComponent,
+      FooterComponent
    ],
    imports: [
       BrowserModule,

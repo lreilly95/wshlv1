@@ -1,7 +1,7 @@
 <div class="container">
   <h3 class="mt-5">Skaters</h3>
   <h4 *ngIf="loggedIn()">Click on player number to edit player</h4>
-  <table mdbTable mdbTableScroll striped="true" scrollY="true" maxHeight="700" bordered="true">
+  <table mdbTable mdbTableScroll small="true" striped="true" scrollY="true" maxHeight="700" bordered="true">
     <thead>
       <tr>
         <th *ngFor="let head of headElements; let i = index" scope="col" [mdbTableSort]="elements" [sortBy]="sortElements[i]">{{head}}
@@ -28,7 +28,7 @@
   </table>
 
   <h3 class="mt-5">Goalies</h3>
-  <table mdbTable mdbTableScroll striped="true" scrollY="true" maxHeight="80vh" bordered="true">
+  <table mdbTable mdbTableScroll small="true" striped="true" scrollY="true" maxHeight="80vh" bordered="true">
     <thead>
       <tr>
         <th *ngFor="let head of headGoalies; let i = index" scope="col" [mdbTableSort]="goalies" [sortBy]="sortGoalies[i]">{{head}}
