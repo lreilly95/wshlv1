@@ -1,7 +1,5 @@
-<div *ngIf="loggedIn()" class="text-center"><h2>Welcome {{authService.decodedToken?.unique_name | titlecase}}</h2></div>
-
-<div *ngIf="!loggedIn()">
-  <form  #loginForm="ngForm" class="text-center border border-light p-5 col-6 mx-auto" (ngSubmit)="login()">
+<div>
+  <form  #loginForm="ngForm" class="text-center border border-light p-5 col-6 mx-auto mt-4" (ngSubmit)="login()">
 
     <p class="h4 mb-4">Sign in</p>
 

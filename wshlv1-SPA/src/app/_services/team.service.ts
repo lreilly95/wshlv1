@@ -13,7 +13,7 @@ export class TeamService {
 constructor(private http: HttpClient) { }
 
 getTeams(): Observable<Team[]> {
-  return this.http.get<Team[]>(this.baseUrl + 'teams');
+  return this.http.get<Team[]>(this.baseUrl + 'teams'); // Gets list of teams from API
 }
 
 }

@@ -13,6 +13,7 @@ import { GameService } from '../_services/game.service';
 export class GamesComponent implements OnInit {
   games: Game[];
   teamMap = new Map();
+  logoMap = new Map();
 
   constructor(private gameService: GameService, private http: HttpClient,
               private alertify: AlertifyService, private authService: AuthService) { }
@@ -20,6 +21,7 @@ export class GamesComponent implements OnInit {
   ngOnInit() {
     this.loadGames();
     this.mapTeams();
+    this.mapLogos();
   }
 
   loadGames() {
@@ -37,5 +39,13 @@ export class GamesComponent implements OnInit {
     this.teamMap.set(4, 'Dumfries Destroyers');
     this.teamMap.set(5, 'Kilmarnock Kestrels');
     this.teamMap.set(6, 'Stirling Stingrays');
+  }
+
+  mapLogos() {
+    this.logoMap.set(1, '/assets/img/paisleylogo.png');
+  }
+
+  getLogo(teamId) {
+    return this.logoMap.get(teamId);
   }
 }

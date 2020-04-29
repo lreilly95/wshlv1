@@ -1,12 +1,8 @@
-<!--Navbar-->
-<mdb-navbar SideClass="navbar navbar-expand-lg navbar-dark bg-primary" [containerInside]="false">
+<mdb-navbar SideClass="navbar navbar-expand-lg navbar-dark mdb-color darken-1" [containerInside]="false">
 
   <!-- Navbar brand -->
-  <mdb-navbar-brand><a class="navbar-brand" [routerLink]="['/home']" routerLinkActive="router-link-active" >WSHL</a></mdb-navbar-brand>
-
-  <!-- Collapsible content -->
+  <mdb-navbar-brand><a class="navbar-brand" [routerLink]="['/home']" routerLinkActive="router-link-active" ><mdb-icon fas icon="hockey-puck"></mdb-icon> WSHL</a></mdb-navbar-brand>
   <links>
-
     <!-- Links -->
     <ul class="navbar-nav mr-auto">
       <li class="nav-item" routerLinkActive="active">
@@ -37,6 +33,4 @@
 
    
   </links>
-
 </mdb-navbar>
-<!--/.Navbar-->

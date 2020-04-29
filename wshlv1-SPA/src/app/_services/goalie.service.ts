@@ -12,14 +12,17 @@ export class GoalieService {
 
 constructor(private http: HttpClient) { }
 
+// Get all goalies
 getGoalies(): Observable<Goalie[]> {
   return this.http.get<Goalie[]>(this.baseUrl + 'goalies');
 }
 
+// Get a goalie with ID
 getGoalie(id): Observable<Goalie> {
   return this.http.get<Goalie>(this.baseUrl + 'goalies/' + id);
 }
 
+// Get all goalies playing for a team
 getGoaliesTeam(teamId): Observable<Goalie[]> {
   return this.http.get<Goalie[]>(this.baseUrl + 'goalies/team' + teamId);
 }

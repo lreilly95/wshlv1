@@ -1,4 +1,16 @@
-<h1 class="text-center mt-5">
-  Welcome To WSHL Gamecentre
-</h1>
+<mdb-card class="rounded-0" style="background-image: url('assets/img/Grade Grey.jpg')">
+  <div class="text-white text-center py-5 px-4 my-5">
+    <div>
+      <h2 class="card-title h1-responsive pt-3 mb-5 font-bold"><strong>Welcome to the Official Website of the WSHL</strong></h2>
+      <p class="mx-5 mb-2">The West of Scotland Hockey League consists of 6 teams based in Paisley, Glasgow, Ayr, Stirling, Dumfries, and Kilmarnock.
+      </p>
+      <p class="mx-5 mb-5">On this site you will find league standings, player stats, game results, and team rosters.
+      </p>
+      <a mdbBtn color="white" outline="true" class="waves-light" mdbWavesEffect [routerLink]="['/teams']">
+       View The Teams
+      </a>
+    </div>
+  </div>
+</mdb-card>
+
 <app-standings></app-standings>

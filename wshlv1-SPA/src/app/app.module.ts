@@ -23,6 +23,7 @@ import { PlayersEditResolver } from './_resolvers/players-edit.resolver';
 import { GoaliesEditResolver } from './_resolvers/goalies-edit.resolver';
 import { GoaliesEditComponent } from './goalies-edit/goalies-edit.component';
 import { FooterComponent } from './footer/footer.component';
+import { ErrorInterceptorProvider } from './_services/error.interceptor';
 
 export function tokenGetter() {
    return localStorage.getItem('token');
@@ -61,7 +62,8 @@ export function tokenGetter() {
    providers: [
       AuthService,
       PlayersEditResolver,
-      GoaliesEditResolver
+      GoaliesEditResolver,
+      ErrorInterceptorProvider
    ],
    bootstrap: [
       AppComponent

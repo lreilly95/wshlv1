@@ -33,11 +33,11 @@ export class TabletestComponent implements OnInit {
     this.loadPlayers();
     this.loadGoalies();
     this.mapTeams();
-  } 
+  }
 
   loadPlayers() {
     this.playerService.getPlayers().subscribe((players: Player[]) => {
-      this.elements = players.sort((a, b) => b.points - a.points);
+      this.elements = players.sort((a, b) => b.points - a.points); // Default sorting, players by points descending
     }, error => {
       this.alertify.error(error);
     });
@@ -45,12 +45,13 @@ export class TabletestComponent implements OnInit {
 
   loadGoalies() {
     this.goalieService.getGoalies().subscribe((goalies: Goalie[]) => {
-      this.goalies = goalies.sort((a, b) => b.savePercentage - a.savePercentage);
+      this.goalies = goalies.sort((a, b) => b.savePercentage - a.savePercentage); // Default sorting, by SV% descending
     }, error => {
       this.alertify.error(error);
     });
   }
 
+  // Maps teamId to team names
   mapTeams() {
     this.teamMap.set(1, 'Paisley Pioneers');
     this.teamMap.set(2, 'Glasgow Giants');

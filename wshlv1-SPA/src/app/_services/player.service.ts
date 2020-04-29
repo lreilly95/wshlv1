@@ -12,14 +12,17 @@ export class PlayerService {
 
 constructor(private http: HttpClient) { }
 
+// Get all players
 getPlayers(): Observable<Player[]> {
   return this.http.get<Player[]>(this.baseUrl + 'players');
 }
 
+// Get player with ID
 getPlayer(id): Observable<Player> {
   return this.http.get<Player>(this.baseUrl + 'players/' + id);
 }
 
+// Get all players playing for a team
 getPlayersTeam(teamId): Observable<Player[]> {
   return this.http.get<Player[]>(this.baseUrl + 'players/team' + teamId);
 }

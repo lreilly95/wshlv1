@@ -33,7 +33,7 @@ export class TeamsComponent implements OnInit {
 
   loadPlayers(selectedTeamId) {
     this.playerService.getPlayersTeam(selectedTeamId).subscribe((players: Player[]) => {
-      this.players = players.sort((a, b) => b.points - a.points);
+      this.players = players.sort((a, b) => b.points - a.points); // Default sorting, by points descending
     }, error => {
       this.alertify.error(error);
     });
@@ -41,7 +41,7 @@ export class TeamsComponent implements OnInit {
 
   loadGoalies(selectedTeamId) {
     this.goalieService.getGoaliesTeam(selectedTeamId).subscribe((goalies: Goalie[]) => {
-      this.goalies = goalies.sort((a, b) => b.savePercentage - a.savePercentage);
+      this.goalies = goalies.sort((a, b) => b.savePercentage - a.savePercentage); // Default sorting, by SV% descending
     }, error => {
       this.alertify.error(error);
     });
@@ -49,7 +49,7 @@ export class TeamsComponent implements OnInit {
 
   loadGames(selectedTeamId) {
     this.gameService.getGamesTeam(selectedTeamId).subscribe((games: Game[]) => {
-      this.games = games.sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime());
+      this.games = games.sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime()); // Default sorting, by date ascending
     }, error => {
       this.alertify.error(error);
     });

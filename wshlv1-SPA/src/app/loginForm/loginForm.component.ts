@@ -13,20 +13,21 @@ export class LoginFormComponent implements OnInit {
 
   constructor(public authService: AuthService, private alertify: AlertifyService, private router: Router) { }
 
+
+  // If user is logged in, take them immediately to the admin page
   ngOnInit() {
+    if (this.authService.loggedIn()) {
+      this.router.navigate(['/admin']);
+    }
   }
 
   login() {
     this.authService.login(this.model).subscribe(next => {
       this.alertify.success('Logged In');
-      this.router.navigate(['/admin']);
+      this.router.navigate(['/admin']); // Take user to admin page if login is successful
     }, error => {
       this.alertify.error('Unauthorised');
     });
-  }
-
-  loggedIn() {
-    return this.authService.loggedIn();
   }
 
 }

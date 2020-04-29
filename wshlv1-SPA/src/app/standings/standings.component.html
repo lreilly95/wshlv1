@@ -1,6 +1,6 @@
 <div class="container">
-  <h3 class="mt-5">Standings</h3>
-  <table mdbTable mdbTableScroll striped="true" scrollY="true" maxHeight="700" bordered="true">
+  <h3 class="text-center mt-5">Standings</h3>
+  <table mdbTable mdbTableScroll striped="true" scrollY="true" maxHeight="700" bordered="true" class="my-5" class="animated fadeIn">
     <thead>
       <tr>
         <th *ngFor="let head of headElements; let i = index;" scope="col" [mdbTableSort]="elements" [sortBy]="sortElements[i]">{{head}}

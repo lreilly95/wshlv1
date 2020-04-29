@@ -1,1 +1,15 @@
-<app-register></app-register>
+<div class="mx-5">
+    <div class="row">
+        <div class="col-md-6 my-4">
+            <p class="text-center h4 mb-4">Welcome {{this.username | titlecase}}</p>
+            <hr>
+            <h4>Now that you're logged in, here's some stuff you can do.</h4>
+            <p class="mt-4"> - You can register new officials using the form on the right.</p>
+            <P> - By clicking on the Number field of any Player or Goalie on the Players page, you will be taken to a form to edit their information and statistics.</P>
+        </div>
+
+        <div class="col-md-6 my-4">
+            <app-register></app-register>
+        </div>
+    </div>
+</div>

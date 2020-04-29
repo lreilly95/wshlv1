@@ -14,6 +14,7 @@ export class AuthService {
 
   constructor(private http: HttpClient) { }
 
+  // Log a user in and store their token
   login(model: any) {
     return this.http.post(this.baseUrl + 'login', model)
       .pipe(
@@ -31,6 +32,7 @@ export class AuthService {
     return this.http.post(this.baseUrl + 'register', model);
   }
 
+  // Check if token exists and is not expired
   loggedIn() {
     const token = localStorage.getItem('token');
     return !this.jwtHelper.isTokenExpired(token);

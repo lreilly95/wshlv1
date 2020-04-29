@@ -1,8 +1,8 @@
-<div class="text-center">
+<div class="text-center my-3">
   <button
     mdbBtn
     type="button"
-    color="secondary"
+    color="mdb-color"
     rounded="true"
     [(ngModel)]="selectedTeamId"
     mdbRadio="1"
@@ -14,7 +14,7 @@
   <button
     mdbBtn
     type="button"
-    color="secondary"
+    color="mdb-color"
     rounded="true"
     [(ngModel)]="selectedTeamId"
     mdbRadio="2"
@@ -26,7 +26,7 @@
   <button
     mdbBtn
     type="button"
-    color="secondary"
+    color="mdb-color"
     rounded="true"
     [(ngModel)]="selectedTeamId"
     mdbRadio="3"
@@ -38,7 +38,7 @@
   <button
     mdbBtn
     type="button"
-    color="secondary"
+    color="mdb-color"
     rounded="true"
     [(ngModel)]="selectedTeamId"
     mdbRadio="4"
@@ -50,7 +50,7 @@
   <button
     mdbBtn
     type="button"
-    color="secondary"
+    color="mdb-color"
     rounded="true"
     [(ngModel)]="selectedTeamId"
     mdbRadio="5"
@@ -62,7 +62,7 @@
   <button
     mdbBtn
     type="button"
-    color="secondary"
+    color="mdb-color"
     rounded="true"
     [(ngModel)]="selectedTeamId"
     mdbRadio="6"
@@ -73,8 +73,8 @@
   </button>
 </div>
 
-<div *ngIf="selectedTeamId != null" class="container">
-  <h3 class="mt-5 text-center">Games</h3>
+<div *ngIf="selectedTeamId != null" class="container animated fadeIn zoomIn">
+  <h3 class="mt-4 text-center">Games</h3>
   <div class="row">
     <div class="col-md-4 col-sm-6" *ngFor="let el of games">
       <mdb-card class="mt-4">
@@ -112,7 +112,7 @@
     </div>
   </div>
 
-  <h3 class="mt-5 text-center">Skaters</h3>
+  <h3 class="mt-5 mb-3 text-center">Skaters</h3>
   <table
     mdbTable
     mdbTableScroll
@@ -151,7 +151,7 @@
     </tbody>
   </table>
 
-  <h3 class="mt-5 text-center">Goalies</h3>
+  <h3 class="mt-5 mb-3 text-center">Goalies</h3>
   <table
     mdbTable
     mdbTableScroll
@@ -160,6 +160,7 @@
     scrollY="true"
     maxHeight="80vh"
     bordered="true"
+    class="mb-5"
   >
     <thead>
       <tr>
@@ -187,6 +188,6 @@
   </table>
 </div>
 
-<div *ngIf="selectedTeamId == null" class="text-center mt-5">
+<div *ngIf="selectedTeamId == null" class="text-center mt-5" style="height:80vh;">
   <h1>Click on a team name to view their Games and Rosters</h1>
 </div>
