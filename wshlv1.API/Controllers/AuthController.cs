@@ -22,13 +22,11 @@ namespace wshlv1.API.Controllers
         {
             _config = config;
             _repo = repo;
-
         }
 
         [HttpPost("register")]
         public async Task<IActionResult> Register(OfficialForRegisterDto officialForRegisterDto)
         {
-            //TODO validate request
 
             officialForRegisterDto.Username = officialForRegisterDto.Username.ToLower();
 
