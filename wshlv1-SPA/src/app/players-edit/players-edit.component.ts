@@ -2,7 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { Player } from '../_models/player';
-import { AlertifyService } from '../_services/alertify.service';
+import { NotificationService } from '../_services/notification.service';
 import { ActivatedRoute } from '@angular/router';
 import { PlayerService } from '../_services/player.service';
 import { NgForm } from '@angular/forms';
@@ -18,7 +18,7 @@ export class PlayersEditComponent implements OnInit {
   player: Player;
   errors: boolean = false;
   constructor(private playerService: PlayerService, private http: HttpClient,
-              private alertify: AlertifyService, private route: ActivatedRoute) { }
+              private toastr: NotificationService, private route: ActivatedRoute) { }
 
 
   ngOnInit() {
@@ -30,10 +30,10 @@ export class PlayersEditComponent implements OnInit {
   // Calls player service, send a http PUT request with player object
   updatePlayer() {
     this.playerService.updatePlayer(this.player.id, this.player).subscribe(next => {
-      this.alertify.success('Player Updated');
+      this.toastr.success('Player Updated');
       this.editForm.reset(this.player);
     }, error => {
-      this.alertify.error(error);
+      this.toastr.error(error);
       this.editForm.reset(this.player);
     });
   }
@@ -42,25 +42,25 @@ export class PlayersEditComponent implements OnInit {
   validateInput() {
     this.errors = false;
     if (!isNumeric(this.player.number) || this.player.number < 1 || this.player.number > 98) {
-      this.alertify.error('Player number must be a number between 1 & 98');
+      this.toastr.error('Player number must be a number between 1 & 98');
       this.errors = true;
     }
     if (!isNumeric(this.player.teamId) || this.player.teamId < 1 || this.player.teamId > 6) {
-      this.alertify.error('Player Team ID must be a number between 1 & 6');
+      this.toastr.error('Player Team ID must be a number between 1 & 6');
       this.errors = true;
     }
     if (!isNumeric(this.player.points) || !isNumeric(this.player.goals) || !isNumeric(this.player.assists)
     || !isNumeric(this.player.gamesPlayed) || !isNumeric(this.player.piMs)
     || !isNumeric(this.player.plusMinus) || !isNumeric(this.player.sog)) {
-      this.alertify.error('Player stats must be numeric');
+      this.toastr.error('Player stats must be numeric');
       this.errors = true;
     }
     if (isNumeric(this.player.firstName) || isNumeric(this.player.lastName) || isNumeric(this.player.position)) {
-      this.alertify.error('Names and positions cannot be numeric');
+      this.toastr.error('Names and positions cannot be numeric');
       this.errors = true;
     }
     if (this.player.position !== 'F' && this.player.position != 'D') {
-      this.alertify.error('Position must be either "F" or "D"');
+      this.toastr.error('Position must be either "F" or "D"');
       this.errors = true;
     }
     if (this.errors === false) {

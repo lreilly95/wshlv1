@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PlayerService } from '../_services/player.service';
 import { GoalieService } from '../_services/goalie.service';
-import { AlertifyService } from '../_services/alertify.service';
+import { NotificationService } from '../_services/notification.service';
 import { Player } from '../_models/player';
 import { Goalie } from '../_models/goalie';
 import { Game } from '../_models/game';
@@ -26,7 +26,7 @@ export class TeamsComponent implements OnInit {
   headGoalies = ['Number', 'Name', 'Surname' , 'SV%', 'Played', 'Won', 'GAA'];
 
   constructor(private playerService: PlayerService, private goalieService: GoalieService,
-              private alertify: AlertifyService, private gameService: GameService) { }
+              private toastr: NotificationService, private gameService: GameService) { }
 
   ngOnInit() {
     this.mapTeams();
@@ -37,7 +37,7 @@ export class TeamsComponent implements OnInit {
     this.playerService.getPlayersTeam(selectedTeamId).subscribe((players: Player[]) => {
       this.players = players.sort((a, b) => b.points - a.points); // Default sorting, by points descending
     }, error => {
-      this.alertify.error(error);
+      this.toastr.error(error);
     });
   }
 
@@ -45,7 +45,7 @@ export class TeamsComponent implements OnInit {
     this.goalieService.getGoaliesTeam(selectedTeamId).subscribe((goalies: Goalie[]) => {
       this.goalies = goalies.sort((a, b) => b.savePercentage - a.savePercentage); // Default sorting, by SV% descending
     }, error => {
-      this.alertify.error(error);
+      this.toastr.error(error);
     });
   }
 
@@ -53,7 +53,7 @@ export class TeamsComponent implements OnInit {
     this.gameService.getGamesTeam(selectedTeamId).subscribe((games: Game[]) => {
       this.games = games.sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime()); // Default sorting, by date ascending
     }, error => {
-      this.alertify.error(error);
+      this.toastr.error(error);
     });
   }
 

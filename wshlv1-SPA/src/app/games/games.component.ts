@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Game } from '../_models/game';
 import { HttpClient } from '@angular/common/http';
-import { AlertifyService } from '../_services/alertify.service';
+import { NotificationService } from '../_services/notification.service';
 import { AuthService } from '../_services/auth.service';
 import { GameService } from '../_services/game.service';
 
@@ -16,7 +16,7 @@ export class GamesComponent implements OnInit {
   logoMap = new Map();
 
   constructor(private gameService: GameService, private http: HttpClient,
-              private alertify: AlertifyService, private authService: AuthService) { }
+              private toastr: NotificationService, private authService: AuthService) { }
 
   ngOnInit() {
     this.loadGames();
@@ -28,7 +28,7 @@ export class GamesComponent implements OnInit {
     this.gameService.getGames().subscribe((games: Game[]) => {
       this.games = games;
     }, error => {
-      this.alertify.error(error);
+      this.toastr.error(error);
     });
   }
 

@@ -5,7 +5,7 @@ import { Player } from '../_models/player';
 import { Goalie } from '../_models/goalie';
 import { PlayerService } from '../_services/player.service';
 import { GoalieService } from '../_services/goalie.service';
-import { AlertifyService } from '../_services/alertify.service';
+import { NotificationService } from '../_services/notification.service';
 import { AuthService } from '../_services/auth.service';
 
 @Component({
@@ -26,7 +26,7 @@ export class TabletestComponent implements OnInit {
   teamMap = new Map();
 
   constructor(private playerService: PlayerService, private goalieService: GoalieService,
-              private http: HttpClient, private alertify: AlertifyService, private authService: AuthService) { }
+              private http: HttpClient, private toastr: NotificationService, private authService: AuthService) { }
 
 
   ngOnInit() {
@@ -39,7 +39,7 @@ export class TabletestComponent implements OnInit {
     this.playerService.getPlayers().subscribe((players: Player[]) => {
       this.elements = players.sort((a, b) => b.points - a.points); // Default sorting, players by points descending
     }, error => {
-      this.alertify.error(error);
+      this.toastr.error(error);
     });
   }
 
@@ -47,7 +47,7 @@ export class TabletestComponent implements OnInit {
     this.goalieService.getGoalies().subscribe((goalies: Goalie[]) => {
       this.goalies = goalies.sort((a, b) => b.savePercentage - a.savePercentage); // Default sorting, by SV% descending
     }, error => {
-      this.alertify.error(error);
+      this.toastr.error(error);
     });
   }
 

@@ -4,7 +4,7 @@ import { environment } from 'src/environments/environment';
 import { Observable } from 'rxjs';
 import { Team } from '../_models/team';
 import { TeamService } from '../_services/team.service';
-import { AlertifyService } from '../_services/alertify.service';
+import { NotificationService } from '../_services/notification.service';
 
 @Component({
   selector: 'app-standings',
@@ -18,7 +18,7 @@ export class StandingsComponent implements OnInit {
   baseUrl = environment.apiUrl;
   teamMap = new Map();
 
-  constructor(private http: HttpClient, private teamService: TeamService, private alertify: AlertifyService) { }
+  constructor(private http: HttpClient, private teamService: TeamService, private toastr: NotificationService) { }
 
 
   ngOnInit() {
@@ -29,7 +29,7 @@ export class StandingsComponent implements OnInit {
     this.teamService.getTeams().subscribe((teams: Team[]) => {
       this.elements = teams.sort((a, b) => b.points - a.points);
     }, error => {
-      this.alertify.error(error);
+      this.toastr.error(error);
     });
   }
 }
