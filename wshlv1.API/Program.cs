@@ -21,12 +21,16 @@ namespace wshlv1.API
             using (var scope = host.Services.CreateScope())
             {
                 var services = scope.ServiceProvider;
-                // Will create databse if it does not exist, and will seed Player data if none exists
+                // Will create databse if it does not exist, and will seed data if none exists
                 try
                 {
                     var context = services.GetRequiredService<DataContext>();
                     context.Database.Migrate();
                     Seed.SeedPlayers(context);
+                    Seed.SeedGoalies(context);
+                    Seed.SeedTeams(context);
+                    Seed.SeedGames(context);
+                    Seed.SeedOfficials(context);
                 }
                 catch (Exception ex)
                 {
