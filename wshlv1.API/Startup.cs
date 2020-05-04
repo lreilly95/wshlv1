@@ -87,7 +87,16 @@ namespace wshlv1.API
             //app.UseHttpsRedirection();
             app.UseCors(x => x.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
             app.UseAuthentication();
-            app.UseMvc();
+            app.UseDefaultFiles();
+            app.UseStaticFiles(); //Automatically look at wwwroot folder for front-end
+            //If a route is not recognized, use FallbackController to look for route in front-end
+            app.UseMvc(routes => 
+            {
+                routes.MapSpaFallbackRoute(
+                    name: "spa-fallback",
+                    defaults: new {controller = "Fallback", action = "Index"}
+                );
+            });
         }
     }
 }
