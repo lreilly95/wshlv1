@@ -5,7 +5,6 @@
         "FirstName": "John",
         "GamesPlayed": 6,
         "Goals": 3,
-        "Id": 1,
         "LastName": "Richmond",
         "Number": 34,
         "PIMs": 16,
@@ -21,7 +20,6 @@
         "FirstName": "Stone",
         "GamesPlayed": 6,
         "Goals": 4,
-        "Id": 2,
         "LastName": "Garza",
         "Number": 19,
         "PIMs": 2,
@@ -37,7 +35,6 @@
         "FirstName": "Branch",
         "GamesPlayed": 6,
         "Goals": 2,
-        "Id": 3,
         "LastName": "Schwartz",
         "Number": 59,
         "PIMs": 18,
@@ -53,7 +50,6 @@
         "FirstName": "Romero",
         "GamesPlayed": 6,
         "Goals": 2,
-        "Id": 4,
         "LastName": "Roth",
         "Number": 82,
         "PIMs": 19,
@@ -69,7 +65,6 @@
         "FirstName": "Vincent",
         "GamesPlayed": 6,
         "Goals": 7,
-        "Id": 5,
         "LastName": "Jefferson",
         "Number": 41,
         "PIMs": 17,
@@ -85,7 +80,6 @@
         "FirstName": "Cantu",
         "GamesPlayed": 6,
         "Goals": 0,
-        "Id": 6,
         "LastName": "Phelps",
         "Number": 33,
         "PIMs": 12,
@@ -101,7 +95,6 @@
         "FirstName": "Forbes",
         "GamesPlayed": 6,
         "Goals": 2,
-        "Id": 7,
         "LastName": "Mcgee",
         "Number": 92,
         "PIMs": 6,
@@ -117,7 +110,6 @@
         "FirstName": "Calderon",
         "GamesPlayed": 6,
         "Goals": 0,
-        "Id": 8,
         "LastName": "Paul",
         "Number": 11,
         "PIMs": 16,
@@ -133,7 +125,6 @@
         "FirstName": "Moon",
         "GamesPlayed": 6,
         "Goals": 1,
-        "Id": 9,
         "LastName": "Quinn",
         "Number": 23,
         "PIMs": 15,
@@ -149,7 +140,6 @@
         "FirstName": "Walker",
         "GamesPlayed": 6,
         "Goals": 0,
-        "Id": 10,
         "LastName": "Scott",
         "Number": 90,
         "PIMs": 16,
@@ -165,7 +155,6 @@
         "FirstName": "Bowen",
         "GamesPlayed": 6,
         "Goals": 7,
-        "Id": 11,
         "LastName": "Sharpe",
         "Number": 25,
         "PIMs": 16,
@@ -181,7 +170,7 @@
         "FirstName": "Moss",
         "GamesPlayed": 6,
         "Goals": 3,
-        "Id": 12,
+       
         "LastName": "Noel",
         "Number": 80,
         "PIMs": 17,
@@ -197,7 +186,7 @@
         "FirstName": "Reeves",
         "GamesPlayed": 6,
         "Goals": 4,
-        "Id": 13,
+       
         "LastName": "Watson",
         "Number": 48,
         "PIMs": 8,
@@ -213,7 +202,7 @@
         "FirstName": "Miles",
         "GamesPlayed": 6,
         "Goals": 7,
-        "Id": 14,
+       
         "LastName": "Velasquez",
         "Number": 38,
         "PIMs": 16,
@@ -229,7 +218,7 @@
         "FirstName": "Patel",
         "GamesPlayed": 6,
         "Goals": 0,
-        "Id": 15,
+       
         "LastName": "Calhoun",
         "Number": 81,
         "PIMs": 17,
@@ -245,7 +234,7 @@
         "FirstName": "Gilmore",
         "GamesPlayed": 6,
         "Goals": 4,
-        "Id": 16,
+       
         "LastName": "Alford",
         "Number": 43,
         "PIMs": 4,
@@ -261,7 +250,7 @@
         "FirstName": "Bullock",
         "GamesPlayed": 6,
         "Goals": 2,
-        "Id": 17,
+       
         "LastName": "Melton",
         "Number": 44,
         "PIMs": 15,
@@ -277,7 +266,7 @@
         "FirstName": "Munoz",
         "GamesPlayed": 6,
         "Goals": 5,
-        "Id": 18,
+       
         "LastName": "Wooten",
         "Number": 79,
         "PIMs": 20,
@@ -293,7 +282,7 @@
         "FirstName": "Adams",
         "GamesPlayed": 6,
         "Goals": 7,
-        "Id": 19,
+       
         "LastName": "Gerard",
         "Number": 54,
         "PIMs": 10,
@@ -309,7 +298,7 @@
         "FirstName": "Gardner",
         "GamesPlayed": 6,
         "Goals": 5,
-        "Id": 20,
+       
         "LastName": "Small",
         "Number": 75,
         "PIMs": 12,
@@ -325,7 +314,7 @@
         "FirstName": "Castillo",
         "GamesPlayed": 6,
         "Goals": 2,
-        "Id": 21,
+       
         "LastName": "Wheeler",
         "Number": 32,
         "PIMs": 6,
@@ -341,7 +330,7 @@
         "FirstName": "Griffith",
         "GamesPlayed": 6,
         "Goals": 0,
-        "Id": 22,
+       
         "LastName": "Monroe",
         "Number": 5,
         "PIMs": 17,
@@ -357,7 +346,7 @@
         "FirstName": "Knapp",
         "GamesPlayed": 6,
         "Goals": 7,
-        "Id": 23,
+       
         "LastName": "Drake",
         "Number": 11,
         "PIMs": 18,
@@ -373,7 +362,7 @@
         "FirstName": "Gregory",
         "GamesPlayed": 6,
         "Goals": 4,
-        "Id": 24,
+       
         "LastName": "Blankenship",
         "Number": 85,
         "PIMs": 18,
@@ -389,7 +378,7 @@
         "FirstName": "Faulkner",
         "GamesPlayed": 6,
         "Goals": 4,
-        "Id": 25,
+       
         "LastName": "Berg",
         "Number": 66,
         "PIMs": 20,
@@ -405,7 +394,7 @@
         "FirstName": "Holloway",
         "GamesPlayed": 6,
         "Goals": 2,
-        "Id": 26,
+       
         "LastName": "Whitaker",
         "Number": 34,
         "PIMs": 17,
@@ -421,7 +410,7 @@
         "FirstName": "Zamora",
         "GamesPlayed": 6,
         "Goals": 5,
-        "Id": 27,
+       
         "LastName": "Foley",
         "Number": 68,
         "PIMs": 14,
@@ -437,7 +426,7 @@
         "FirstName": "Melendez",
         "GamesPlayed": 6,
         "Goals": 3,
-        "Id": 28,
+       
         "LastName": "Shannon",
         "Number": 69,
         "PIMs": 19,
@@ -453,7 +442,7 @@
         "FirstName": "Bartlett",
         "GamesPlayed": 6,
         "Goals": 3,
-        "Id": 29,
+       
         "LastName": "Bray",
         "Number": 19,
         "PIMs": 18,
@@ -469,7 +458,7 @@
         "FirstName": "Bolton",
         "GamesPlayed": 6,
         "Goals": 0,
-        "Id": 30,
+       
         "LastName": "Chandler",
         "Number": 95,
         "PIMs": 6,
@@ -485,7 +474,7 @@
         "FirstName": "Beach",
         "GamesPlayed": 6,
         "Goals": 6,
-        "Id": 31,
+       
         "LastName": "Cruz",
         "Number": 97,
         "PIMs": 5,
@@ -501,7 +490,7 @@
         "FirstName": "Rocha",
         "GamesPlayed": 6,
         "Goals": 3,
-        "Id": 32,
+       
         "LastName": "Pitts",
         "Number": 36,
         "PIMs": 12,
@@ -517,7 +506,7 @@
         "FirstName": "Warner",
         "GamesPlayed": 6,
         "Goals": 3,
-        "Id": 33,
+       
         "LastName": "Whitfield",
         "Number": 14,
         "PIMs": 2,
@@ -533,7 +522,7 @@
         "FirstName": "Hale",
         "GamesPlayed": 6,
         "Goals": 7,
-        "Id": 34,
+       
         "LastName": "Blevins",
         "Number": 67,
         "PIMs": 2,
@@ -549,7 +538,7 @@
         "FirstName": "Sullivan",
         "GamesPlayed": 6,
         "Goals": 1,
-        "Id": 35,
+       
         "LastName": "Hurley",
         "Number": 33,
         "PIMs": 20,
@@ -565,7 +554,7 @@
         "FirstName": "Norton",
         "GamesPlayed": 6,
         "Goals": 0,
-        "Id": 36,
+       
         "LastName": "Houston",
         "Number": 57,
         "PIMs": 16,
@@ -581,7 +570,7 @@
         "FirstName": "Valentine",
         "GamesPlayed": 6,
         "Goals": 5,
-        "Id": 37,
+       
         "LastName": "Johnston",
         "Number": 82,
         "PIMs": 0,
@@ -597,7 +586,7 @@
         "FirstName": "Butler",
         "GamesPlayed": 6,
         "Goals": 4,
-        "Id": 38,
+       
         "LastName": "Coffey",
         "Number": 45,
         "PIMs": 17,
@@ -613,7 +602,7 @@
         "FirstName": "Francis",
         "GamesPlayed": 6,
         "Goals": 1,
-        "Id": 39,
+       
         "LastName": "Fulton",
         "Number": 9,
         "PIMs": 12,
@@ -629,7 +618,7 @@
         "FirstName": "Clayton",
         "GamesPlayed": 6,
         "Goals": 6,
-        "Id": 40,
+       
         "LastName": "Joseph",
         "Number": 79,
         "PIMs": 18,
@@ -645,7 +634,7 @@
         "FirstName": "Burton",
         "GamesPlayed": 6,
         "Goals": 2,
-        "Id": 41,
+       
         "LastName": "Savage",
         "Number": 61,
         "PIMs": 18,
@@ -661,7 +650,7 @@
         "FirstName": "Dunn",
         "GamesPlayed": 6,
         "Goals": 7,
-        "Id": 42,
+       
         "LastName": "Crawford",
         "Number": 2,
         "PIMs": 14,
@@ -677,7 +666,7 @@
         "FirstName": "Armstrong",
         "GamesPlayed": 6,
         "Goals": 5,
-        "Id": 43,
+       
         "LastName": "Henson",
         "Number": 29,
         "PIMs": 16,
@@ -693,7 +682,7 @@
         "FirstName": "Wilson",
         "GamesPlayed": 6,
         "Goals": 1,
-        "Id": 44,
+       
         "LastName": "Mathews",
         "Number": 53,
         "PIMs": 16,
@@ -709,7 +698,7 @@
         "FirstName": "Byers",
         "GamesPlayed": 6,
         "Goals": 0,
-        "Id": 45,
+       
         "LastName": "Glenn",
         "Number": 27,
         "PIMs": 12,
@@ -725,7 +714,7 @@
         "FirstName": "Sutton",
         "GamesPlayed": 6,
         "Goals": 0,
-        "Id": 46,
+       
         "LastName": "Mckenzie",
         "Number": 74,
         "PIMs": 10,
@@ -741,7 +730,7 @@
         "FirstName": "John",
         "GamesPlayed": 6,
         "Goals": 6,
-        "Id": 47,
+       
         "LastName": "Gates",
         "Number": 48,
         "PIMs": 18,
@@ -757,7 +746,7 @@
         "FirstName": "Jason",
         "GamesPlayed": 6,
         "Goals": 6,
-        "Id": 48,
+       
         "LastName": "Melendez",
         "Number": 72,
         "PIMs": 18,
@@ -773,7 +762,7 @@
         "FirstName": "Hinton",
         "GamesPlayed": 6,
         "Goals": 0,
-        "Id": 49,
+       
         "LastName": "Gonzales",
         "Number": 32,
         "PIMs": 10,
@@ -789,7 +778,7 @@
         "FirstName": "Kinney",
         "GamesPlayed": 6,
         "Goals": 3,
-        "Id": 50,
+       
         "LastName": "Holland",
         "Number": 60,
         "PIMs": 12,
@@ -805,7 +794,7 @@
         "FirstName": "Pickett",
         "GamesPlayed": 6,
         "Goals": 5,
-        "Id": 51,
+       
         "LastName": "Horne",
         "Number": 92,
         "PIMs": 17,
@@ -821,7 +810,7 @@
         "FirstName": "Willis",
         "GamesPlayed": 6,
         "Goals": 6,
-        "Id": 52,
+       
         "LastName": "Bates",
         "Number": 51,
         "PIMs": 2,
@@ -837,7 +826,7 @@
         "FirstName": "Cooke",
         "GamesPlayed": 6,
         "Goals": 0,
-        "Id": 53,
+       
         "LastName": "Santana",
         "Number": 39,
         "PIMs": 2,
@@ -853,7 +842,7 @@
         "FirstName": "Dale",
         "GamesPlayed": 6,
         "Goals": 2,
-        "Id": 54,
+       
         "LastName": "Randall",
         "Number": 40,
         "PIMs": 16,
@@ -869,7 +858,7 @@
         "FirstName": "Jimenez",
         "GamesPlayed": 6,
         "Goals": 0,
-        "Id": 55,
+       
         "LastName": "Pope",
         "Number": 16,
         "PIMs": 18,
@@ -885,7 +874,7 @@
         "FirstName": "Mcfadden",
         "GamesPlayed": 6,
         "Goals": 7,
-        "Id": 56,
+       
         "LastName": "Shelton",
         "Number": 71,
         "PIMs": 20,
@@ -901,7 +890,7 @@
         "FirstName": "Alston",
         "GamesPlayed": 6,
         "Goals": 1,
-        "Id": 57,
+       
         "LastName": "Peck",
         "Number": 37,
         "PIMs": 14,
@@ -917,7 +906,7 @@
         "FirstName": "Rocha",
         "GamesPlayed": 6,
         "Goals": 3,
-        "Id": 58,
+       
         "LastName": "Stephenson",
         "Number": 25,
         "PIMs": 15,
@@ -933,7 +922,7 @@
         "FirstName": "Freeman",
         "GamesPlayed": 6,
         "Goals": 0,
-        "Id": 59,
+       
         "LastName": "Simon",
         "Number": 8,
         "PIMs": 10,
@@ -949,7 +938,7 @@
         "FirstName": "Kemp",
         "GamesPlayed": 6,
         "Goals": 4,
-        "Id": 60,
+       
         "LastName": "Cross",
         "Number": 44,
         "PIMs": 18,
@@ -965,7 +954,7 @@
         "FirstName": "Finley",
         "GamesPlayed": 6,
         "Goals": 1,
-        "Id": 61,
+       
         "LastName": "Harmon",
         "Number": 80,
         "PIMs": 19,
@@ -981,7 +970,7 @@
         "FirstName": "Murray",
         "GamesPlayed": 6,
         "Goals": 4,
-        "Id": 62,
+       
         "LastName": "Myers",
         "Number": 69,
         "PIMs": 16,
@@ -997,7 +986,7 @@
         "FirstName": "Robles",
         "GamesPlayed": 6,
         "Goals": 3,
-        "Id": 63,
+       
         "LastName": "Moran",
         "Number": 32,
         "PIMs": 6,
@@ -1013,7 +1002,7 @@
         "FirstName": "Roberts",
         "GamesPlayed": 6,
         "Goals": 2,
-        "Id": 64,
+       
         "LastName": "Rasmussen",
         "Number": 79,
         "PIMs": 20,
@@ -1029,7 +1018,7 @@
         "FirstName": "Blanchard",
         "GamesPlayed": 6,
         "Goals": 3,
-        "Id": 65,
+       
         "LastName": "Pierce",
         "Number": 47,
         "PIMs": 20,
@@ -1045,7 +1034,7 @@
         "FirstName": "Wooten",
         "GamesPlayed": 6,
         "Goals": 3,
-        "Id": 66,
+       
         "LastName": "Anderson",
         "Number": 63,
         "PIMs": 4,
@@ -1061,7 +1050,7 @@
         "FirstName": "Hampton",
         "GamesPlayed": 6,
         "Goals": 6,
-        "Id": 67,
+       
         "LastName": "Joyner",
         "Number": 56,
         "PIMs": 0,
@@ -1077,7 +1066,7 @@
         "FirstName": "Gallegos",
         "GamesPlayed": 6,
         "Goals": 7,
-        "Id": 68,
+       
         "LastName": "Reed",
         "Number": 45,
         "PIMs": 18,
@@ -1093,7 +1082,7 @@
         "FirstName": "Mcmahon",
         "GamesPlayed": 6,
         "Goals": 0,
-        "Id": 69,
+       
         "LastName": "Forbes",
         "Number": 27,
         "PIMs": 15,
@@ -1109,7 +1098,7 @@
         "FirstName": "Franco",
         "GamesPlayed": 6,
         "Goals": 2,
-        "Id": 70,
+       
         "LastName": "Olsen",
         "Number": 53,
         "PIMs": 14,
@@ -1125,7 +1114,7 @@
         "FirstName": "Finch",
         "GamesPlayed": 6,
         "Goals": 0,
-        "Id": 71,
+       
         "LastName": "Avila",
         "Number": 30,
         "PIMs": 12,
@@ -1141,7 +1130,7 @@
         "FirstName": "Franks",
         "GamesPlayed": 6,
         "Goals": 4,
-        "Id": 72,
+       
         "LastName": "Hewitt",
         "Number": 65,
         "PIMs": 5,
@@ -1157,7 +1146,7 @@
         "FirstName": "Mueller",
         "GamesPlayed": 6,
         "Goals": 3,
-        "Id": 73,
+       
         "LastName": "Noble",
         "Number": 24,
         "PIMs": 14,
@@ -1173,7 +1162,7 @@
         "FirstName": "Bonner",
         "GamesPlayed": 6,
         "Goals": 5,
-        "Id": 74,
+       
         "LastName": "Whitfield",
         "Number": 8,
         "PIMs": 20,
@@ -1189,7 +1178,7 @@
         "FirstName": "Riggs",
         "GamesPlayed": 6,
         "Goals": 2,
-        "Id": 75,
+       
         "LastName": "Scott",
         "Number": 86,
         "PIMs": 16,
@@ -1205,7 +1194,7 @@
         "FirstName": "Tran",
         "GamesPlayed": 6,
         "Goals": 0,
-        "Id": 76,
+       
         "LastName": "Ewing",
         "Number": 36,
         "PIMs": 16,
@@ -1221,7 +1210,7 @@
         "FirstName": "Shelton",
         "GamesPlayed": 6,
         "Goals": 3,
-        "Id": 77,
+       
         "LastName": "Gonzalez",
         "Number": 32,
         "PIMs": 18,
@@ -1237,7 +1226,7 @@
         "FirstName": "Buckner",
         "GamesPlayed": 6,
         "Goals": 1,
-        "Id": 78,
+       
         "LastName": "Long",
         "Number": 46,
         "PIMs": 18,
@@ -1253,7 +1242,7 @@
         "FirstName": "Grimes",
         "GamesPlayed": 6,
         "Goals": 6,
-        "Id": 79,
+       
         "LastName": "Haley",
         "Number": 28,
         "PIMs": 6,
@@ -1269,7 +1258,7 @@
         "FirstName": "Frazier",
         "GamesPlayed": 6,
         "Goals": 6,
-        "Id": 80,
+       
         "LastName": "Moses",
         "Number": 83,
         "PIMs": 8,
@@ -1285,7 +1274,7 @@
         "FirstName": "Carr",
         "GamesPlayed": 6,
         "Goals": 4,
-        "Id": 81,
+       
         "LastName": "Good",
         "Number": 68,
         "PIMs": 10,
@@ -1301,7 +1290,7 @@
         "FirstName": "Ruiz",
         "GamesPlayed": 6,
         "Goals": 2,
-        "Id": 82,
+       
         "LastName": "Odonnell",
         "Number": 97,
         "PIMs": 2,
@@ -1317,7 +1306,7 @@
         "FirstName": "Mendez",
         "GamesPlayed": 6,
         "Goals": 2,
-        "Id": 83,
+       
         "LastName": "Ochoa",
         "Number": 41,
         "PIMs": 6,
@@ -1333,7 +1322,7 @@
         "FirstName": "Vincent",
         "GamesPlayed": 6,
         "Goals": 1,
-        "Id": 84,
+       
         "LastName": "Tran",
         "Number": 77,
         "PIMs": 20,
@@ -1349,7 +1338,7 @@
         "FirstName": "Horne",
         "GamesPlayed": 6,
         "Goals": 3,
-        "Id": 85,
+       
         "LastName": "Solomon",
         "Number": 25,
         "PIMs": 0,
@@ -1365,7 +1354,7 @@
         "FirstName": "Dunn",
         "GamesPlayed": 6,
         "Goals": 0,
-        "Id": 86,
+       
         "LastName": "Andrews",
         "Number": 92,
         "PIMs": 0,
@@ -1381,7 +1370,7 @@
         "FirstName": "Baird",
         "GamesPlayed": 6,
         "Goals": 3,
-        "Id": 87,
+       
         "LastName": "Serrano",
         "Number": 7,
         "PIMs": 20,
@@ -1397,7 +1386,7 @@
         "FirstName": "Wilcox",
         "GamesPlayed": 6,
         "Goals": 4,
-        "Id": 88,
+       
         "LastName": "Mcbride",
         "Number": 18,
         "PIMs": 12,
@@ -1413,7 +1402,7 @@
         "FirstName": "Kramer",
         "GamesPlayed": 6,
         "Goals": 2,
-        "Id": 89,
+       
         "LastName": "Ashley",
         "Number": 4,
         "PIMs": 10,
@@ -1429,7 +1418,7 @@
         "FirstName": "Fox",
         "GamesPlayed": 6,
         "Goals": 5,
-        "Id": 90,
+       
         "LastName": "Coleman",
         "Number": 90,
         "PIMs": 15,
@@ -1445,7 +1434,7 @@
         "FirstName": "Baker",
         "GamesPlayed": 6,
         "Goals": 3,
-        "Id": 91,
+       
         "LastName": "Church",
         "Number": 69,
         "PIMs": 12,
@@ -1461,7 +1450,7 @@
         "FirstName": "Stein",
         "GamesPlayed": 6,
         "Goals": 4,
-        "Id": 92,
+       
         "LastName": "Guzman",
         "Number": 67,
         "PIMs": 8,
@@ -1477,7 +1466,7 @@
         "FirstName": "Finley",
         "GamesPlayed": 6,
         "Goals": 1,
-        "Id": 93,
+       
         "LastName": "Crane",
         "Number": 50,
         "PIMs": 18,
@@ -1493,7 +1482,7 @@
         "FirstName": "Turner",
         "GamesPlayed": 6,
         "Goals": 5,
-        "Id": 94,
+       
         "LastName": "Webb",
         "Number": 35,
         "PIMs": 20,
@@ -1509,7 +1498,7 @@
         "FirstName": "Burris",
         "GamesPlayed": 6,
         "Goals": 3,
-        "Id": 95,
+       
         "LastName": "Strong",
         "Number": 64,
         "PIMs": 20,
@@ -1525,7 +1514,7 @@
         "FirstName": "Valenzuela",
         "GamesPlayed": 6,
         "Goals": 3,
-        "Id": 96,
+       
         "LastName": "Carrillo",
         "Number": 19,
         "PIMs": 18,
@@ -1541,7 +1530,7 @@
         "FirstName": "Boyer",
         "GamesPlayed": 6,
         "Goals": 1,
-        "Id": 97,
+       
         "LastName": "Scott",
         "Number": 6,
         "PIMs": 15,
@@ -1557,7 +1546,7 @@
         "FirstName": "Dejesus",
         "GamesPlayed": 6,
         "Goals": 2,
-        "Id": 98,
+       
         "LastName": "Zimmerman",
         "Number": 33,
         "PIMs": 5,
@@ -1573,7 +1562,7 @@
         "FirstName": "Harrison",
         "GamesPlayed": 6,
         "Goals": 5,
-        "Id": 99,
+       
         "LastName": "Oneil",
         "Number": 83,
         "PIMs": 10,
@@ -1589,7 +1578,7 @@
         "FirstName": "Stephenson",
         "GamesPlayed": 6,
         "Goals": 0,
-        "Id": 100,
+       
         "LastName": "Cherry",
         "Number": 7,
         "PIMs": 20,
@@ -1605,7 +1594,7 @@
         "FirstName": "Massey",
         "GamesPlayed": 6,
         "Goals": 5,
-        "Id": 101,
+       
         "LastName": "Koch",
         "Number": 21,
         "PIMs": 10,
@@ -1621,7 +1610,7 @@
         "FirstName": "Sutton",
         "GamesPlayed": 6,
         "Goals": 3,
-        "Id": 102,
+       
         "LastName": "Nielsen",
         "Number": 94,
         "PIMs": 14,
@@ -1637,7 +1626,7 @@
         "FirstName": "Holloway",
         "GamesPlayed": 6,
         "Goals": 5,
-        "Id": 103,
+       
         "LastName": "Frazier",
         "Number": 61,
         "PIMs": 17,
@@ -1653,7 +1642,7 @@
         "FirstName": "Weeks",
         "GamesPlayed": 6,
         "Goals": 2,
-        "Id": 104,
+       
         "LastName": "Meyers",
         "Number": 49,
         "PIMs": 5,
@@ -1669,7 +1658,7 @@
         "FirstName": "Pacheco",
         "GamesPlayed": 6,
         "Goals": 7,
-        "Id": 105,
+       
         "LastName": "Lopez",
         "Number": 74,
         "PIMs": 6,
@@ -1685,7 +1674,7 @@
         "FirstName": "Walsh",
         "GamesPlayed": 6,
         "Goals": 6,
-        "Id": 106,
+       
         "LastName": "Ratliff",
         "Number": 18,
         "PIMs": 8,
@@ -1701,7 +1690,7 @@
         "FirstName": "Burke",
         "GamesPlayed": 6,
         "Goals": 6,
-        "Id": 107,
+       
         "LastName": "David",
         "Number": 92,
         "PIMs": 16,
@@ -1717,7 +1706,7 @@
         "FirstName": "Henderson",
         "GamesPlayed": 6,
         "Goals": 5,
-        "Id": 108,
+       
         "LastName": "Wise",
         "Number": 8,
         "PIMs": 0,

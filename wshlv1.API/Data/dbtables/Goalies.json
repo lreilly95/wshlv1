@@ -5,7 +5,7 @@
         "GAA": 8.3,
         "GamesPlayed": 6,
         "GamesWon": 4,
-        "Id": 1,
+        
         "LastName": "Wahl",
         "Number": 1,
         "SavePercentage": 94.2,
@@ -17,7 +17,7 @@
         "GAA": 0,
         "GamesPlayed": 0,
         "GamesWon": 0,
-        "Id": 2,
+        
         "LastName": "Nitmynder",
         "Number": 33,
         "SavePercentage": 0,
@@ -29,7 +29,7 @@
         "GAA": 10.6,
         "GamesPlayed": 6,
         "GamesWon": 2,
-        "Id": 3,
+        
         "LastName": "Linn",
         "Number": 1,
         "SavePercentage": 92.4,
@@ -41,7 +41,7 @@
         "GAA": 0,
         "GamesPlayed": 0,
         "GamesWon": 0,
-        "Id": 4,
+        
         "LastName": "Suomalainen",
         "Number": 32,
         "SavePercentage": 0,
@@ -53,7 +53,7 @@
         "GAA": 9.5,
         "GamesPlayed": 6,
         "GamesWon": 3,
-        "Id": 5,
+        
         "LastName": "Jackson",
         "Number": 1,
         "SavePercentage": 91.8,
@@ -65,7 +65,7 @@
         "GAA": 0,
         "GamesPlayed": 0,
         "GamesWon": 0,
-        "Id": 6,
+        
         "LastName": "Jones",
         "Number": 31,
         "SavePercentage": 0,
@@ -77,7 +77,7 @@
         "GAA": 9.1,
         "GamesPlayed": 6,
         "GamesWon": 3,
-        "Id": 7,
+        
         "LastName": "Richards",
         "Number": 1,
         "SavePercentage": 89.7,
@@ -89,7 +89,7 @@
         "GAA": 0,
         "GamesPlayed": 0,
         "GamesWon": 0,
-        "Id": 8,
+        
         "LastName": "Edwards",
         "Number": 38,
         "SavePercentage": 0,
@@ -101,7 +101,7 @@
         "GAA": 9.3,
         "GamesPlayed": 6,
         "GamesWon": 4,
-        "Id": 9,
+        
         "LastName": "Gosling",
         "Number": 1,
         "SavePercentage": 91,
@@ -113,7 +113,6 @@
         "GAA": 0,
         "GamesPlayed": 0,
         "GamesWon": 0,
-        "Id": 10,
         "LastName": "Harlow",
         "Number": 36,
         "SavePercentage": 0,
@@ -125,7 +124,6 @@
         "GAA": 10,
         "GamesPlayed": 6,
         "GamesWon": 2,
-        "Id": 11,
         "LastName": "Nairn",
         "Number": 1,
         "SavePercentage": 90,
@@ -137,7 +135,6 @@
         "GAA": 0,
         "GamesPlayed": 0,
         "GamesWon": 0,
-        "Id": 12,
         "LastName": "Ewing",
         "Number": 34,
         "SavePercentage": 0,

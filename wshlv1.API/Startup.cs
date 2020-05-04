@@ -40,7 +40,7 @@ namespace wshlv1.API
 
         public void ConfigureProductionServices(IServiceCollection services) 
         {
-            services.AddDbContext<DataContext>(x => x.UseMySql(Configuration.GetConnectionString("DefaultConnection")));
+            services.AddDbContext<DataContext>(x => x.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
             ConfigureServices(services);
         }
