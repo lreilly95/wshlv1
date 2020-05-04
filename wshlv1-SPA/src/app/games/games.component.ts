@@ -43,6 +43,11 @@ export class GamesComponent implements OnInit {
 
   mapLogos() {
     this.logoMap.set(1, '/assets/img/paisleylogo.png');
+    this.logoMap.set(2, '/assets/img/glasgowlogo.png');
+    this.logoMap.set(3, '/assets/img/ayrlogo.png');
+    this.logoMap.set(4, '/assets/img/dumfrieslogo.png');
+    this.logoMap.set(5, '/assets/img/kilmarnocklogo.png');
+    this.logoMap.set(6, '/assets/img/stirlinglogo.png');
   }
 
   getLogo(teamId) {

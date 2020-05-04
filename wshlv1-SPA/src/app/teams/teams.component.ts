@@ -18,6 +18,7 @@ export class TeamsComponent implements OnInit {
   goalies: Goalie[];
   games: Game[];
   teamMap = new Map();
+  logoMap = new Map();
   sortElements = ['number', 'firstName', 'lastName',
   'position', 'gamesPlayed', 'points', 'goals', 'assists', 'piMs', 'plusMinus', 'sog'];
   headElements = ['Number', 'Name', 'Surname', 'Pos', 'Played', 'Points', 'Goals', 'Assists', 'PIMs', '+/-', 'SoG'];
@@ -29,6 +30,7 @@ export class TeamsComponent implements OnInit {
 
   ngOnInit() {
     this.mapTeams();
+    this.mapLogos();
   }
 
   loadPlayers(selectedTeamId) {
@@ -64,10 +66,23 @@ export class TeamsComponent implements OnInit {
     this.teamMap.set(6, 'Stirling Stingrays');
   }
 
+  mapLogos() {
+    this.logoMap.set(1, '/assets/img/paisleylogo.png');
+    this.logoMap.set(2, '/assets/img/glasgowlogo.png');
+    this.logoMap.set(3, '/assets/img/ayrlogo.png');
+    this.logoMap.set(4, '/assets/img/dumfrieslogo.png');
+    this.logoMap.set(5, '/assets/img/kilmarnocklogo.png');
+    this.logoMap.set(6, '/assets/img/stirlinglogo.png');
+  }
+
   updateComponent() {
     this.loadPlayers(this.selectedTeamId);
     this.loadGoalies(this.selectedTeamId);
     this.loadGames(this.selectedTeamId);
+  }
+
+  getLogo(teamId) {
+    return this.logoMap.get(teamId);
   }
 
 }
