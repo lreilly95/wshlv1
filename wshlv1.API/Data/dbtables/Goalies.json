@@ -14,13 +14,13 @@
     {
         "DateOfBirth": "1992-06-28",
         "FirstName": "Bakhup",
-        "GAA": "",
+        "GAA": 0,
         "GamesPlayed": 0,
         "GamesWon": 0,
         "Id": 2,
         "LastName": "Nitmynder",
         "Number": 33,
-        "SavePercentage": "",
+        "SavePercentage": 0,
         "TeamId": 1
     },
     {
@@ -38,13 +38,13 @@
     {
         "DateOfBirth": "1988-11-27",
         "FirstName": "Jakko",
-        "GAA": "",
+        "GAA": 0,
         "GamesPlayed": 0,
         "GamesWon": 0,
         "Id": 4,
         "LastName": "Suomalainen",
         "Number": 32,
-        "SavePercentage": "",
+        "SavePercentage": 0,
         "TeamId": 2
     },
     {
@@ -62,13 +62,13 @@
     {
         "DateOfBirth": "2000-09-25",
         "FirstName": "Terry",
-        "GAA": "",
+        "GAA": 0,
         "GamesPlayed": 0,
         "GamesWon": 0,
         "Id": 6,
         "LastName": "Jones",
         "Number": 31,
-        "SavePercentage": "",
+        "SavePercentage": 0,
         "TeamId": 3
     },
     {
@@ -86,13 +86,13 @@
     {
         "DateOfBirth": "2003-08-15",
         "FirstName": "Ewan",
-        "GAA": "",
+        "GAA": 0,
         "GamesPlayed": 0,
         "GamesWon": 0,
         "Id": 8,
         "LastName": "Edwards",
         "Number": 38,
-        "SavePercentage": "",
+        "SavePercentage": 0,
         "TeamId": 4
     },
     {
@@ -110,13 +110,13 @@
     {
         "DateOfBirth": "1999-12-02",
         "FirstName": "Yannis",
-        "GAA": "",
+        "GAA": 0,
         "GamesPlayed": 0,
         "GamesWon": 0,
         "Id": 10,
         "LastName": "Harlow",
         "Number": 36,
-        "SavePercentage": "",
+        "SavePercentage": 0,
         "TeamId": 5
     },
     {
@@ -134,13 +134,13 @@
     {
         "DateOfBirth": "1995-05-30",
         "FirstName": "Thomas",
-        "GAA": "",
+        "GAA": 0,
         "GamesPlayed": 0,
         "GamesWon": 0,
         "Id": 12,
         "LastName": "Ewing",
         "Number": 34,
-        "SavePercentage": "",
+        "SavePercentage": 0,
         "TeamId": 6
     }
 ]

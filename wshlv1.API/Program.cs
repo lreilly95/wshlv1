@@ -26,9 +26,9 @@ namespace wshlv1.API
                 {
                     var context = services.GetRequiredService<DataContext>();
                     context.Database.Migrate();
+                    Seed.SeedTeams(context);
                     Seed.SeedPlayers(context);
                     Seed.SeedGoalies(context);
-                    Seed.SeedTeams(context);
                     Seed.SeedGames(context);
                     Seed.SeedOfficials(context);
                 }

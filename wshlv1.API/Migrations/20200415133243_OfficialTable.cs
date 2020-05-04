@@ -85,7 +85,7 @@ namespace wshlv1.API.Migrations
                     GamesPlayed = table.Column<int>(nullable: false),
                     GamesWon = table.Column<int>(nullable: false),
                     SavePercentage = table.Column<double>(nullable: false),
-                    GAA = table.Column<double>(nullable: false)
+                    GAA = table.Column<double>(nullable: true)
                 },
                 constraints: table =>
                 {
