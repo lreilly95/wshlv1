@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../_services/auth.service';
-import { AlertifyService } from '../_services/alertify.service';
+import { NotificationService } from '../_services/notification.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
 export class LoginFormComponent implements OnInit {
   model: any = {};
 
-  constructor(public authService: AuthService, private alertify: AlertifyService, private router: Router) { }
+  constructor(public authService: AuthService, private toastr: NotificationService, private router: Router) { }
 
 
   // If user is logged in, take them immediately to the admin page
@@ -23,10 +23,10 @@ export class LoginFormComponent implements OnInit {
 
   login() {
     this.authService.login(this.model).subscribe(next => {
-      this.alertify.success('Logged In');
+      this.toastr.success('Logged In');
       this.router.navigate(['/admin']); // Take user to admin page if login is successful
     }, error => {
-      this.alertify.error('Unauthorised');
+      this.toastr.error('Unauthorised');
     });
   }
 

@@ -2,6 +2,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { HttpClientModule } from '@angular/common/http';
+import { CommonModule } from '@angular/common';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToastrModule } from 'ngx-toastr';
 
 import { AppComponent } from './app.component';
 import { NavComponent } from './nav/nav.component';
@@ -51,6 +54,14 @@ export function tokenGetter() {
       HttpClientModule,
       FormsModule,
       RouterModule.forRoot(appRoutes),
+      CommonModule,
+      BrowserAnimationsModule,
+      ToastrModule.forRoot({
+         timeOut: 3000,
+         positionClass: 'toast-bottom-right',
+         preventDuplicates: true,
+         countDuplicates: true
+      }),
       JwtModule.forRoot({
          config: {
             tokenGetter: tokenGetter,
