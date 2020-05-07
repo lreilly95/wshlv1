@@ -1,0 +1,74 @@
+[
+    {
+        "GamesPlayed": 6,
+        "GoalsAgainst": 49,
+        "GoalsFor": 53,
+        "Id": 1,
+        "Losses": 1,
+        "Name": "Paisley Pioneers",
+        "OTL": 1,
+        "OTW": 0,
+        "Points": 9,
+        "Wins": 4
+    },
+    {
+        "GamesPlayed": 6,
+        "GoalsAgainst": 64,
+        "GoalsFor": 62,
+        "Id": 2,
+        "Losses": 4,
+        "Name": "Glasgow Giants",
+        "OTL": 0,
+        "OTW": 0,
+        "Points": 4,
+        "Wins": 2
+    },
+    {
+        "GamesPlayed": 6,
+        "GoalsAgainst": 58,
+        "GoalsFor": 59,
+        "Id": 3,
+        "Losses": 3,
+        "Name": "Ayr Assassins",
+        "OTL": 0,
+        "OTW": 0,
+        "Points": 6,
+        "Wins": 3
+    },
+    {
+        "GamesPlayed": 6,
+        "GoalsAgainst": 55,
+        "GoalsFor": 50,
+        "Id": 4,
+        "Losses": 3,
+        "Name": "Dumfries Destroyers",
+        "OTL": 0,
+        "OTW": 1,
+        "Points": 6,
+        "Wins": 2
+    },
+    {
+        "GamesPlayed": 6,
+        "GoalsAgainst": 56,
+        "GoalsFor": 52,
+        "Id": 5,
+        "Losses": 2,
+        "Name": "Kilmarnock Kestrels",
+        "OTL": 0,
+        "OTW": 1,
+        "Points": 8,
+        "Wins": 3
+    },
+    {
+        "GamesPlayed": 6,
+        "GoalsAgainst": 60,
+        "GoalsFor": 66,
+        "Id": 6,
+        "Losses": 3,
+        "Name": "Stirling Stingrays",
+        "OTL": 1,
+        "OTW": 0,
+        "Points": 5,
+        "Wins": 2
+    }
+]

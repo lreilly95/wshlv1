@@ -40,6 +40,7 @@ namespace wshlv1.API
 
         public void ConfigureProductionServices(IServiceCollection services) 
         {
+
             services.AddDbContext<DataContext>(x => x.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
             ConfigureServices(services);
@@ -99,6 +100,7 @@ namespace wshlv1.API
             app.UseAuthentication();
             app.UseDefaultFiles();
             app.UseStaticFiles(); //Automatically look at wwwroot folder for front-end
+            
             //If a route is not recognized, use FallbackController to look for route in front-end
             app.UseMvc(routes => 
             {
