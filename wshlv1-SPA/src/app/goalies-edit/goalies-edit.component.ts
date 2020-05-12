@@ -36,6 +36,7 @@ export class GoaliesEditComponent implements OnInit {
     });
   }
 
+  // Validation for form fields, called on submit
   validateInput() {
     this.errors = false;
     if (!isNumeric(this.goalie.number) || this.goalie.number < 1 || this.goalie.number > 98) {

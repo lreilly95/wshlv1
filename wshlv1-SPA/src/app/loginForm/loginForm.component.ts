@@ -21,6 +21,7 @@ export class LoginFormComponent implements OnInit {
     }
   }
 
+  // Calls authService to log in, defines behaviour for success and failure
   login() {
     this.authService.login(this.model).subscribe(next => {
       this.toastr.success('Logged In');

@@ -12,6 +12,7 @@ import { PlayersEditResolver } from './_resolvers/players-edit.resolver';
 import { GoaliesEditComponent } from './goalies-edit/goalies-edit.component';
 import { GoaliesEditResolver } from './_resolvers/goalies-edit.resolver';
 
+// Defines which components are loaded on each route
 export const appRoutes: Routes = [
     { path: 'home', component: HomeComponent},
     { path: 'players', component: TabletestComponent},
@@ -19,8 +20,11 @@ export const appRoutes: Routes = [
     { path: 'login', component: LoginFormComponent},
     { path: 'register', component: RegisterComponent},
     { path: 'games', component: GamesComponent},
+    // User must be logged in
     { path: 'admin', component: AdminComponent, canActivate: [AuthGuard]},
+    // User must be logged in
     { path: 'players/:id', component: PlayersEditComponent, resolve: {player: PlayersEditResolver}, canActivate: [AuthGuard]},
+    // User must be logged in
     { path: 'goalies/:id', component: GoaliesEditComponent, resolve: {goalie: GoaliesEditResolver}, canActivate: [AuthGuard]},
     { path: '**', redirectTo: 'home', pathMatch: 'full'},
 ];

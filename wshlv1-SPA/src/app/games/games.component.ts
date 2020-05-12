@@ -32,6 +32,7 @@ export class GamesComponent implements OnInit {
     });
   }
 
+  // Map of team names from teamID
   mapTeams() {
     this.teamMap.set(1, 'Paisley Pioneers');
     this.teamMap.set(2, 'Glasgow Giants');
@@ -41,6 +42,7 @@ export class GamesComponent implements OnInit {
     this.teamMap.set(6, 'Stirling Stingrays');
   }
 
+  // Map of logo assests from teamID
   mapLogos() {
     this.logoMap.set(1, '/assets/img/paisleylogo.png');
     this.logoMap.set(2, '/assets/img/glasgowlogo.png');

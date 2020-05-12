@@ -6,7 +6,7 @@ namespace wshlv1.API.Helpers
 {
     public class AutoMapperProfiles : Profile
     {
-        public AutoMapperProfiles()
+        public AutoMapperProfiles() //Maps data transfer objects to models
         {
             CreateMap<Player, PlayerForListDto>();
             CreateMap<Team, TeamForListDto>();

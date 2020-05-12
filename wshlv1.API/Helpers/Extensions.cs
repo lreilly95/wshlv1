@@ -5,7 +5,7 @@ namespace wshlv1.API.Helpers
 {
     public static class Extensions
     {
-         public static void AddApplicationError(this HttpResponse response, string message)
+         public static void AddApplicationError(this HttpResponse response, string message) //Add error messaged to http responses
          {
              response.Headers.Add("Application-Error", message);
              response.Headers.Add("Access-Control-Expose-Headers", "Application-Error");

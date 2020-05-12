@@ -33,6 +33,7 @@ export class TeamsComponent implements OnInit {
     this.mapLogos();
   }
 
+  // Load players of selected team
   loadPlayers(selectedTeamId) {
     this.playerService.getPlayersTeam(selectedTeamId).subscribe((players: Player[]) => {
       this.players = players.sort((a, b) => b.points - a.points); // Default sorting, by points descending
@@ -41,6 +42,7 @@ export class TeamsComponent implements OnInit {
     });
   }
 
+  // Load goalies for selected team.
   loadGoalies(selectedTeamId) {
     this.goalieService.getGoaliesTeam(selectedTeamId).subscribe((goalies: Goalie[]) => {
       this.goalies = goalies.sort((a, b) => b.savePercentage - a.savePercentage); // Default sorting, by SV% descending
@@ -49,6 +51,7 @@ export class TeamsComponent implements OnInit {
     });
   }
 
+  // Load games with selected teamID
   loadGames(selectedTeamId) {
     this.gameService.getGamesTeam(selectedTeamId).subscribe((games: Game[]) => {
       this.games = games.sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime()); // Default sorting, by date ascending
@@ -57,6 +60,7 @@ export class TeamsComponent implements OnInit {
     });
   }
 
+  // Map of team names to teamIDs
   mapTeams() {
     this.teamMap.set(1, 'Paisley Pioneers');
     this.teamMap.set(2, 'Glasgow Giants');
@@ -66,6 +70,7 @@ export class TeamsComponent implements OnInit {
     this.teamMap.set(6, 'Stirling Stingrays');
   }
 
+  // Map of logo assets to teamIDs
   mapLogos() {
     this.logoMap.set(1, '/assets/img/paisleylogo.png');
     this.logoMap.set(2, '/assets/img/glasgowlogo.png');
@@ -75,12 +80,14 @@ export class TeamsComponent implements OnInit {
     this.logoMap.set(6, '/assets/img/stirlinglogo.png');
   }
 
+  // Called when team radio button is changed
   updateComponent() {
     this.loadPlayers(this.selectedTeamId);
     this.loadGoalies(this.selectedTeamId);
     this.loadGames(this.selectedTeamId);
   }
 
+  // Returns logo of team with teamID
   getLogo(teamId) {
     return this.logoMap.get(teamId);
   }

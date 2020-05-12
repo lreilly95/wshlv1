@@ -44,7 +44,7 @@ namespace wshlv1.API.Controllers
             var playersToReturn = _mapper.Map<IEnumerable<PlayerForListDto>>(players);
             return Ok(playersToReturn);
         }
-        [Authorize]
+        [Authorize] //Requries a user to be logged in
         [HttpPut("{id}")]
         public async Task<IActionResult> UpdatePlayer(int id, PlayerForUpdateDto playerForUpdateDto)
         {

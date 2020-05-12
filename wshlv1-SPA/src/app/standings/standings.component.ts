@@ -27,7 +27,7 @@ export class StandingsComponent implements OnInit {
 
   loadTeams() {
     this.teamService.getTeams().subscribe((teams: Team[]) => {
-      this.elements = teams.sort((a, b) => b.points - a.points);
+      this.elements = teams.sort((a, b) => b.points - a.points); // Defines initial sorting; by points descending.
     }, error => {
       this.toastr.error(error);
     });

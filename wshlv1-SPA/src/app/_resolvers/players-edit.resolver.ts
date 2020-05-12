@@ -11,6 +11,7 @@ import { catchError } from 'rxjs/operators';
 export class PlayersEditResolver implements Resolve<Player> {
     constructor(private playerService: PlayerService, private router: Router, private toastr: NotificationService) {}
 
+    // Resolves route to edit player component when goalie number is clicked.
     resolve(route: ActivatedRouteSnapshot): Observable<Player> {
         return this.playerService.getPlayer(route.params['id']).pipe(
             catchError(error => {

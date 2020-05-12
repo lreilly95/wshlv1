@@ -9,6 +9,7 @@ import { NotificationService } from '../_services/notification.service';
 export class AuthGuard implements CanActivate {
   constructor(private authService: AuthService, private router: Router, private toastr: NotificationService) {}
   
+  // Provides behaviour for route guards
   canActivate(): boolean {
     if (this.authService.loggedIn()) {
       return true;

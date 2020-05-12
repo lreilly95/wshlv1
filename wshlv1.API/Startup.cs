@@ -76,10 +76,10 @@ namespace wshlv1.API
             }
             else
             {
-                //adds unhandled exception error message to https response when in production
+                //adds unhandled exception error messages to https response when in production
                 app.UseExceptionHandler(builder => {
                     builder.Run(async context => {
-                        context.Response.StatusCode = (int)HttpStatusCode.InternalServerError;
+                        context.Response.StatusCode = (int)HttpStatusCode.InternalServerError; //Produces a http 500 status code
 
                         var error = context.Features.Get<IExceptionHandlerFeature>();
 

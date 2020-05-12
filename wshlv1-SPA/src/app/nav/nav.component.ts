@@ -19,6 +19,7 @@ export class NavComponent implements OnInit {
     return this.authService.loggedIn();
   }
 
+  // Removes token, notifies the user, and navigates to home
   logout() {
     localStorage.removeItem('token');
     this.toastr.notify('Logged Out');

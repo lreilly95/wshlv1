@@ -3,6 +3,7 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
@@ -24,6 +25,7 @@ namespace wshlv1.API.Controllers
             _repo = repo;
         }
 
+        [Authorize]
         [HttpPost("register")]
         public async Task<IActionResult> Register(OfficialForRegisterDto officialForRegisterDto)
         {
@@ -49,7 +51,7 @@ namespace wshlv1.API.Controllers
             var officialFromRepo = await _repo.Login(officialForLoginDto.Username.ToLower(), officialForLoginDto.Password);
 
             if (officialFromRepo == null)
-                return Unauthorized();
+                return Unauthorized(); //If username or password is wrong, or does not exist
 
             var claims = new[]
             {
@@ -64,7 +66,7 @@ namespace wshlv1.API.Controllers
             var tokenDescriptor = new SecurityTokenDescriptor
             {
                 Subject = new ClaimsIdentity(claims),
-                Expires = DateTime.Now.AddDays(1),
+                Expires = DateTime.Now.AddDays(1), //Token will expire 1 day after issue
                 SigningCredentials = creds
             };
 
